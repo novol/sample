@@ -1,0 +1,12 @@
+[
+{"gosu":"kikuban", "size":"636.0 x 939.0", "height":210.0, "width":310.0},
+{"gosu":"hatoronban", "size":"900.0 x 1200.0", "height":232.5, "width":310.0},
+{"gosu":"gagakusi", "size":"582.0 x 758.0", "height":238.0, "width":310.0},
+{"gosu":"gurasinban", "size":"506.0 x 758.0", "height":206.9, "width":310.0},
+{"gosu":"kentoban", "size":"485.0 x 624.0", "height":240.9, "width":310.0},
+{"gosu":"serohan", "size":"909.0 x 1000.0", "height":281.8, "width":310.0},
+{"gosu":"tore-singu", "size":"841.0 x 1189.0", "height":219.3, "width":310.0},
+{"gosu":"hansiban", "size":"242.0 x 333.0", "height":225.3, "width":310.0},
+{"gosu":"minoban", "size":"273.0 x 394.0", "height":214.8, "width":310.0},
+{"gosu":"mokutansi", "size":"500.0 x 650.0", "height":238.5, "width":310.0},
+]
