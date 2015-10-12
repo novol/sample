@@ -95,10 +95,7 @@ class SecondViewController:
                 } else {
                     print("Add:OTHER")
                 }
-                
-                
-                
-                
+
                 let imgStr = Image2String(img)
 
                 let now = NSDate()
