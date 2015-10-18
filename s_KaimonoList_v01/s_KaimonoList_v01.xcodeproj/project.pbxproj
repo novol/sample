@@ -20,6 +20,7 @@
 		2F54582C1BCBCCFE0043A220 /* DescaleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F54582B1BCBCCFE0043A220 /* DescaleViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		2FC2D4801B75D8FA00603214 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC2D47F1B75D8FA00603214 /* ThirdViewController.swift */; };
 		2FFD94331BD05F8900B64F2E /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFD94311BD05F8900B64F2E /* CustomTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
+		2FFD94751BD387DF00B64F2E /* json.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2FFD94741BD387DF00B64F2E /* json.txt */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		2F54582B1BCBCCFE0043A220 /* DescaleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DescaleViewController.swift; sourceTree = "<group>"; };
 		2FC2D47F1B75D8FA00603214 /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		2FFD94311BD05F8900B64F2E /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		2FFD94741BD387DF00B64F2E /* json.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = json.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 				2F19CCB81B698C53008045C6 /* SecondViewController.swift */,
 				2FC2D47F1B75D8FA00603214 /* ThirdViewController.swift */,
 				2F54582B1BCBCCFE0043A220 /* DescaleViewController.swift */,
+				2FFD94741BD387DF00B64F2E /* json.txt */,
 				2F19CCBD1B698C53008045C6 /* Images.xcassets */,
 				2F19CCBF1B698C53008045C6 /* LaunchScreen.xib */,
 				2F19CCB21B698C53008045C6 /* Supporting Files */,
@@ -218,6 +221,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FFD94751BD387DF00B64F2E /* json.txt in Resources */,
 				2F19CCBC1B698C53008045C6 /* Main.storyboard in Resources */,
 				2F19CCC11B698C53008045C6 /* LaunchScreen.xib in Resources */,
 				2F19CCBE1B698C53008045C6 /* Images.xcassets in Resources */,
