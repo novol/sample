@@ -107,6 +107,7 @@ class SecondViewController:
                 ud.setObject(imgStr, forKey: string)
                 ud.synchronize()
                 
+                print("img str:",string)
                 SDS.Add(txtHizuke.text!, kanjo: txtKanjo.text!, kingaku: kingaku!, receipt: string)
 
             } else {

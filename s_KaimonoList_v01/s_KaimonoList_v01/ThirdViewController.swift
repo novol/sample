@@ -169,16 +169,16 @@ class ThirdViewController: UIViewController, UITableViewDelegate, UITableViewDat
             } else {
                 print("View:OTHER")
             }
-
-            //            var imgStr = result[idx].receipt
-//            self.imgReceipt.image = String2Image(imgStr)
-//            if let mgStr = result[idx].receipt {
-//                var img = Image2String(imgStr)
-//                self.imgReceipt.image = img
-//            } else {
-//                self.imgReceipt.image = nil
-//            }
-            
+/*
+            var imgStr = result[idx].receipt
+            self.imgReceipt.image = String2Image(imgStr)
+            if let mgStr = result[idx].receipt {
+                var img = Image2String(imgStr)
+                self.imgReceipt.image = img
+            } else {
+                self.imgReceipt.image = nil
+            }
+*/
         }
     }
 

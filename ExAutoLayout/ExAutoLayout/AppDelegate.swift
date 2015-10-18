@@ -1,9 +1,9 @@
 //
 //  AppDelegate.swift
-//  s_KaimonoList_v01
+//  ExAutoLayout
 //
-//  Created by i.novol on 2015/07/30.
-//  Copyright (c) 2015年 i.novol. All rights reserved.
+//  Created by i.novol on 2015/10/17.
+//  Copyright © 2015年 i.novol. All rights reserved.
 //
 
 import UIKit
@@ -13,7 +13,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-    var descaleList = [[String]]()
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.

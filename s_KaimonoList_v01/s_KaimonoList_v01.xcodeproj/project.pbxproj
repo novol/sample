@@ -17,7 +17,9 @@
 		2F19CCD71B6991DB008045C6 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F19CCD61B6991DB008045C6 /* libsqlite3.dylib */; };
 		2F19CCDA1B6995DA008045C6 /* SwiftData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F19CCD91B6995DA008045C6 /* SwiftData.swift */; };
 		2F4616D11B70E51D00A6F2CD /* SwiftDataSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4616D01B70E51D00A6F2CD /* SwiftDataSample.swift */; };
+		2F54582C1BCBCCFE0043A220 /* DescaleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F54582B1BCBCCFE0043A220 /* DescaleViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		2FC2D4801B75D8FA00603214 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC2D47F1B75D8FA00603214 /* ThirdViewController.swift */; };
+		2FFD94331BD05F8900B64F2E /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFD94311BD05F8900B64F2E /* CustomTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,7 +48,9 @@
 		2F19CCD81B699281008045C6 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		2F19CCD91B6995DA008045C6 /* SwiftData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftData.swift; sourceTree = "<group>"; };
 		2F4616D01B70E51D00A6F2CD /* SwiftDataSample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftDataSample.swift; sourceTree = "<group>"; };
+		2F54582B1BCBCCFE0043A220 /* DescaleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DescaleViewController.swift; sourceTree = "<group>"; };
 		2FC2D47F1B75D8FA00603214 /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
+		2FFD94311BD05F8900B64F2E /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,10 +98,12 @@
 			isa = PBXGroup;
 			children = (
 				2F19CCBA1B698C53008045C6 /* Main.storyboard */,
+				2FFD94311BD05F8900B64F2E /* CustomTableViewCell.swift */,
 				2F19CCB41B698C53008045C6 /* AppDelegate.swift */,
 				2F19CCB61B698C53008045C6 /* FirstViewController.swift */,
 				2F19CCB81B698C53008045C6 /* SecondViewController.swift */,
 				2FC2D47F1B75D8FA00603214 /* ThirdViewController.swift */,
+				2F54582B1BCBCCFE0043A220 /* DescaleViewController.swift */,
 				2F19CCBD1B698C53008045C6 /* Images.xcassets */,
 				2F19CCBF1B698C53008045C6 /* LaunchScreen.xib */,
 				2F19CCB21B698C53008045C6 /* Supporting Files */,
@@ -234,6 +240,8 @@
 			files = (
 				2F19CCB91B698C53008045C6 /* SecondViewController.swift in Sources */,
 				2F4616D11B70E51D00A6F2CD /* SwiftDataSample.swift in Sources */,
+				2FFD94331BD05F8900B64F2E /* CustomTableViewCell.swift in Sources */,
+				2F54582C1BCBCCFE0043A220 /* DescaleViewController.swift in Sources */,
 				2F19CCDA1B6995DA008045C6 /* SwiftData.swift in Sources */,
 				2F19CCB51B698C53008045C6 /* AppDelegate.swift in Sources */,
 				2FC2D4801B75D8FA00603214 /* ThirdViewController.swift in Sources */,
@@ -389,10 +397,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -401,7 +405,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.ishidoya.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/s_KaimonoList_v01.app/s_KaimonoList_v01";
 			};
 			name = Debug;
 		};
@@ -409,15 +412,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
 				INFOPLIST_FILE = s_KaimonoList_v01Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.ishidoya.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/s_KaimonoList_v01.app/s_KaimonoList_v01";
 			};
 			name = Release;
 		};
