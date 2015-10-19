@@ -21,6 +21,7 @@
 		2FC2D4801B75D8FA00603214 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC2D47F1B75D8FA00603214 /* ThirdViewController.swift */; };
 		2FFD94331BD05F8900B64F2E /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFD94311BD05F8900B64F2E /* CustomTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		2FFD94751BD387DF00B64F2E /* json.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2FFD94741BD387DF00B64F2E /* json.txt */; settings = {ASSET_TAGS = (); }; };
+		2FFD94771BD520DC00B64F2E /* desView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFD94761BD520DC00B64F2E /* desView.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		2FC2D47F1B75D8FA00603214 /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		2FFD94311BD05F8900B64F2E /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		2FFD94741BD387DF00B64F2E /* json.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = json.txt; sourceTree = "<group>"; };
+		2FFD94761BD520DC00B64F2E /* desView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = desView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				2F19CCBA1B698C53008045C6 /* Main.storyboard */,
+				2FFD94761BD520DC00B64F2E /* desView.swift */,
 				2FFD94311BD05F8900B64F2E /* CustomTableViewCell.swift */,
 				2F19CCB41B698C53008045C6 /* AppDelegate.swift */,
 				2F19CCB61B698C53008045C6 /* FirstViewController.swift */,
@@ -250,6 +253,7 @@
 				2F19CCB51B698C53008045C6 /* AppDelegate.swift in Sources */,
 				2FC2D4801B75D8FA00603214 /* ThirdViewController.swift in Sources */,
 				2F19CCB71B698C53008045C6 /* FirstViewController.swift in Sources */,
+				2FFD94771BD520DC00B64F2E /* desView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

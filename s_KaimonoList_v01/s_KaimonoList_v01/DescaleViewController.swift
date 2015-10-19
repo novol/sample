@@ -30,6 +30,9 @@ UITableViewDataSource {
     // Tableで使用する配列を設定する
     var myTableView: UITableView!
 
+    // Descaleの表示View
+    var descaleView:desView!
+    
     @IBAction func doViewTable(sender: UIBarButtonItem) {
         if myTableView.hidden == false {
             myTableView.hidden = true
@@ -59,7 +62,12 @@ UITableViewDataSource {
 //            print("型:\(type) 号数:\(gosu) サイズ:\(s) 高さ:\(h) 幅:\(w)")
         }
         
+        // Screen Size の取得
+        let des = CGRectMake(0, 0, self.view.bounds.width, self.view.bounds.height - 44 - 44)
+        descaleView = desView(frame: des)
+        self.view.addSubview(descaleView)
 
+        
         // UserDefaultの設定
 //        var myDefault = NSUserDefaults.standardUserDefaults()
   
@@ -119,15 +127,20 @@ UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let dat = jsonArray[indexPath.row]
+//        let dat = jsonArray[indexPath.row]
 /*
         let a = [dat["gosu"] as! String]
         let hi = [dat["height"] as! Double]
         let wi = [dat["width"] as! Double]
         let desViewSize = self.descelView.bounds.size
 */
+
+        
+        descaleView.sizeFlg = indexPath.row
+        descaleView.setNeedsDisplay()
         
         
+/*
         UIGraphicsBeginImageContextWithOptions(self.view.bounds.size, false, 0)
         let path = UIBezierPath()
 
@@ -152,7 +165,8 @@ UITableViewDataSource {
 //        self.descelView.layer.contents = UIGraphicsGetImageFromCurrentImageContext().CGImage
         self.view.layer.contents = UIGraphicsGetImageFromCurrentImageContext().CGImage
         UIGraphicsEndImageContext()
-    
+*/
+        
     }
         
 //        /*
