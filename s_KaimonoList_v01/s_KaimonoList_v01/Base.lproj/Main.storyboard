@@ -526,6 +526,9 @@
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="more" id="o1c-Ra-dna"/>
                     <navigationItem key="navigationItem" id="o3i-u6-VLd"/>
+                    <connections>
+                        <outlet property="toolbarDescale" destination="tls-1E-tkr" id="Zx2-CC-7Aq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0YD-Ms-TZx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

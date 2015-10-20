@@ -14,6 +14,7 @@ UITableViewDelegate,
 UITableViewDataSource {
 
 //    @IBOutlet weak var descelView: UIView!
+    @IBOutlet weak var toolbarDescale: UIToolbar!
 
     var num:[String] = []
 //    var num:[String] = [
@@ -74,7 +75,7 @@ UITableViewDataSource {
         // AppDeleg
         
         // TableViewの生成する(status barの高さ分ずらして表示).
-        myTableView = UITableView(frame: CGRect(x: 96, y: 100, width: 190, height: 200))
+        myTableView = UITableView(frame: CGRect(x: 0, y: self.view.bounds.height - 200 - self.toolbarDescale.bounds.height - 44, width: 190, height: 200))
         myTableView.backgroundColor = UIColor.whiteColor()
         myTableView.layer.borderColor = UIColor.grayColor().CGColor
         myTableView.layer.borderWidth = 1.0
@@ -127,45 +128,14 @@ UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-//        let dat = jsonArray[indexPath.row]
-/*
-        let a = [dat["gosu"] as! String]
-        let hi = [dat["height"] as! Double]
-        let wi = [dat["width"] as! Double]
-        let desViewSize = self.descelView.bounds.size
-*/
 
+        let dat = jsonArray[indexPath.row]
+
+        let hi = dat["height"] as! Double
+        let we = dat["width"] as! Double
         
-        descaleView.sizeFlg = indexPath.row
+        descaleView.setSize(CGFloat(hi), width: CGFloat(we))
         descaleView.setNeedsDisplay()
-        
-        
-/*
-        UIGraphicsBeginImageContextWithOptions(self.view.bounds.size, false, 0)
-        let path = UIBezierPath()
-
-//        print("centrer( \(self.descelView.center.x), \(self.descelView.center.y) )")
-//        print("bounds( \(self.descelView.bounds.width), \(self.descelView.bounds.height) )")
-
-        //中央縦
-//        path.moveToPoint(CGPointMake(self.descelView.center.x, 0))
-//        path.addLineToPoint(CGPointMake(self.descelView.center.x, self.descelView.bounds.height))
-        path.moveToPoint(CGPointMake(self.view.center.x, 0))
-        path.addLineToPoint(CGPointMake(self.view.center.x, self.view.bounds.height))
-
-        //中央横
-//        path.moveToPoint(CGPointMake(self.descelView.bounds.width, 0))
-//        path.addLineToPoint(CGPointMake(self.descelView.bounds.width, self.descelView.center.y))
-        path.moveToPoint(CGPointMake(0, self.view.center.y - 44))
-        path.addLineToPoint(CGPointMake(self.view.bounds.width, self.view.center.y - 44))
-
-        UIColor.orangeColor().setStroke()
-        path.stroke()
-        
-//        self.descelView.layer.contents = UIGraphicsGetImageFromCurrentImageContext().CGImage
-        self.view.layer.contents = UIGraphicsGetImageFromCurrentImageContext().CGImage
-        UIGraphicsEndImageContext()
-*/
         
     }
         
