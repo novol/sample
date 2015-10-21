@@ -12,6 +12,7 @@ class desView: UIView {
 
     var parHeight: CGFloat = 0.0
     var parWidth: CGFloat = 0.0
+    var parColor: Bool = true
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -39,7 +40,11 @@ class desView: UIView {
             path.addLineToPoint(CGPointMake(self.bounds.width, self.center.y))
             
             path.lineWidth = 0.5
-            UIColor.blackColor().setStroke()
+            if parColor == true {
+                UIColor.blackColor().setStroke()
+            } else {
+                UIColor.whiteColor().setStroke()
+            }
             path.stroke()
 
             //縦1/4左
@@ -59,7 +64,11 @@ class desView: UIView {
             path.addLineToPoint(CGPointMake(self.bounds.width, self.center.y + parHeight / 4))
 
             path.lineWidth = 0.2
-            UIColor.blackColor().setStroke()
+            if parColor == true {
+                UIColor.blackColor().setStroke()
+            } else {
+                UIColor.whiteColor().setStroke()
+            }
             path.stroke()
             
             
@@ -71,7 +80,11 @@ class desView: UIView {
             let boxB = UIBezierPath(rect: CGRectMake(0, self.center.y + parHeight / 2, self.bounds.width, self.center.y - parHeight / 2))
             
             // stroke 色の設定
-            UIColor.blackColor().setFill()
+            if parColor == true {
+                UIColor.blackColor().setFill()
+            } else {
+                UIColor.whiteColor().setFill()
+            }
             
             //  中身の塗りつぶし
             boxR.fill()
@@ -97,4 +110,9 @@ class desView: UIView {
         parHeight = height
         parWidth = width
     }
+
+    func setColor(color: Bool) {
+        parColor = color
+    }
+
 }

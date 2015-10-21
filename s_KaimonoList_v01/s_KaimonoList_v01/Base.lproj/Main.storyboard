@@ -501,16 +501,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tls-1E-tkr">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tls-1E-tkr">
                                 <rect key="frame" x="0.0" y="475" width="320" height="44"/>
                                 <animations/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="tud-Oh-i1c"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="44" id="CKM-zs-ACq"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="Lra-Pw-ZRt"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="44" id="P6y-fI-YGi"/>
+                                    <constraint firstAttribute="height" constant="44" id="Rl9-gO-PAg"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="44" id="hz2-vG-Gi1"/>
                                 </constraints>
                                 <items>
-                                    <barButtonItem title="table" id="DVc-KW-w4u">
+                                    <barButtonItem title="descale" id="DVc-KW-w4u">
                                         <connections>
                                             <action selector="doViewTable:" destination="w7d-P4-c9d" id="rnY-PW-JKO"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="color" id="Ucw-sT-q3g">
+                                        <connections>
+                                            <action selector="doChangeColor:" destination="w7d-P4-c9d" id="fHK-Iw-qsJ"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -518,16 +527,17 @@
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="tls-1E-tkr" firstAttribute="leading" secondItem="C8g-bB-zSQ" secondAttribute="leadingMargin" constant="-20" id="7qp-50-uGK"/>
-                            <constraint firstItem="OEs-z3-OYv" firstAttribute="top" secondItem="tls-1E-tkr" secondAttribute="bottom" id="WjN-0h-9AW"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="tls-1E-tkr" secondAttribute="trailing" constant="-20" id="ifa-Or-MAr"/>
+                            <constraint firstAttribute="trailing" secondItem="tls-1E-tkr" secondAttribute="trailing" id="3hy-9R-cOJ"/>
+                            <constraint firstItem="tls-1E-tkr" firstAttribute="leading" secondItem="C8g-bB-zSQ" secondAttribute="leading" id="9Va-90-nFT"/>
+                            <constraint firstItem="tls-1E-tkr" firstAttribute="bottom" secondItem="OEs-z3-OYv" secondAttribute="top" id="Yzg-eu-yqB"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="more" id="o1c-Ra-dna"/>
                     <navigationItem key="navigationItem" id="o3i-u6-VLd"/>
                     <connections>
-                        <outlet property="toolbarDescale" destination="tls-1E-tkr" id="Zx2-CC-7Aq"/>
+                        <outlet property="toolbarDescale" destination="tls-1E-tkr" id="Lzn-aU-vTc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0YD-Ms-TZx" userLabel="First Responder" sceneMemberID="firstResponder"/>
