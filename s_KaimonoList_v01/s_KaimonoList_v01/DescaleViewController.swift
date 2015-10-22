@@ -16,6 +16,7 @@ UIGestureRecognizerDelegate
 {
 
     @IBOutlet weak var toolbarDescale: UIToolbar!
+    @IBOutlet weak var descleColoeBtn: UIBarButtonItem!
 
     var num:[String] = []
     var jsonArray:NSArray = []
@@ -48,13 +49,6 @@ UIGestureRecognizerDelegate
         } else {
             myTableView.hidden = false
         }
-
-//        if myView.hidden == false {
-//            myView.hidden = true
-//        } else {
-//            myView.hidden = false
-//        }
-
     }
     
     override func viewDidLoad() {
@@ -86,9 +80,8 @@ UIGestureRecognizerDelegate
         // myViewの生成
         imgView = UIView(frame: CGRectMake(0, 0, self.view.bounds.width, self.view.bounds.height - 44 - 44))
         imgView.backgroundColor = UIColor.orangeColor()
-
         imgView.userInteractionEnabled = true
-        
+
         // ジェスチャーの追加
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: "tapGesture:")
         tapGestureRecognizer.delegate = self
@@ -96,6 +89,11 @@ UIGestureRecognizerDelegate
         // Viewの追加
         self.view.addSubview(imgView)
 
+        // imgViewの中にimageをaddSubViewする
+        //
+        //
+        
+        
         // DESCALE Viewの生成
         descaleView = desView(frame: CGRectMake(0, 0, self.view.bounds.width, self.view.bounds.height - 44 - 44))
         descaleView.userInteractionEnabled = false
@@ -124,6 +122,12 @@ UIGestureRecognizerDelegate
         
         // Viewに追加する.
         self.view.addSubview(myTableView)
+        
+        if myTableView.hidden == true {
+            self.descleColoeBtn.enabled = false
+        } else {
+            self.descleColoeBtn.enabled = true
+        }
 
     }
     
@@ -157,13 +161,19 @@ UIGestureRecognizerDelegate
         let dat = jsonArray[indexPath.row]
 
         let hi = dat["height"] as! Double
-        let we = dat["width"] as! Double
+        let wi = dat["width"] as! Double
         
-        descaleView.setSize(CGFloat(hi), width: CGFloat(we))
+        descaleView.setSize(CGFloat(hi), width: CGFloat(wi))
         descaleView.setNeedsDisplay()
         
+        if hi == 0 && wi == 0 {
+            self.descleColoeBtn.enabled = false
+        } else {
+            self.descleColoeBtn.enabled = true
+        }
+
     }
-        
+    
     func tapGesture(gestureRecognizer: UITapGestureRecognizer){
         
         if gestureRecognizer.view == self.view {
@@ -181,11 +191,20 @@ UIGestureRecognizerDelegate
         } else if gestureRecognizer.view == self.myTableView {
             print("Tap descaleView")
         } else if gestureRecognizer.view == self.imgView {
-            print("Tap imgView")
+            print("Tap imgView \(gestureRecognizer.locationInView(self.imgView))")
+            
+            
+            
+        
         } else {
             print("Tap other")
         }
         
     }
+
+//    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+//        let touch = touches.anyObject()! as UITouch
+//        let location = touch.locationInView(view)
+//    }
 
 }

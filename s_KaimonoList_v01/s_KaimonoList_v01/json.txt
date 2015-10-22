@@ -1,4 +1,5 @@
 [
+{"type":"F size","gosu":"非表示","size":"","height":0.0,"width":0.0},
 {"type":"F size","gosu":"0","size":"17.9 x 13.9","height":399.2,"width":310.0},
 {"type":"F size","gosu":"1","size":"22.1 x 16.6","height":412.7,"width":310.0},
 {"type":"F size","gosu":"S.M","size":"22.7 x 16.6","height":423.9,"width":310.0},

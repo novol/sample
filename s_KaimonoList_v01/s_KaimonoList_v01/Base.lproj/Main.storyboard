@@ -537,6 +537,7 @@
                     <tabBarItem key="tabBarItem" systemItem="more" id="o1c-Ra-dna"/>
                     <navigationItem key="navigationItem" id="o3i-u6-VLd"/>
                     <connections>
+                        <outlet property="descleColoeBtn" destination="Ucw-sT-q3g" id="wqh-vo-Lno"/>
                         <outlet property="toolbarDescale" destination="tls-1E-tkr" id="Lzn-aU-vTc"/>
                     </connections>
                 </viewController>

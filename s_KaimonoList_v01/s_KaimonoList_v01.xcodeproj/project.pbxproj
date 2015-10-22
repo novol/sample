@@ -193,6 +193,7 @@
 				TargetAttributes = {
 					2F19CCAE1B698C53008045C6 = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = 575862TE4Z;
 					};
 					2F19CCC51B698C53008045C6 = {
 						CreatedOnToolsVersion = 6.4;
@@ -381,6 +382,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = s_KaimonoList_v01/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.ishidoya.$(PRODUCT_NAME:rfc1034identifier)";
@@ -393,6 +395,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = s_KaimonoList_v01/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.ishidoya.$(PRODUCT_NAME:rfc1034identifier)";
