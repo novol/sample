@@ -31,6 +31,8 @@ UIGestureRecognizerDelegate
     // Imageの表示View
     var imgView:UIView!
 
+    var descaleHight:Double = 0.0
+    var descaleWidth:Double = 0.0
     var descaleColor:Bool = true
     
     @IBAction func doChangeColor(sender: UIBarButtonItem) {
@@ -160,13 +162,13 @@ UIGestureRecognizerDelegate
 
         let dat = jsonArray[indexPath.row]
 
-        let hi = dat["height"] as! Double
-        let wi = dat["width"] as! Double
+        descaleHight = dat["height"] as! Double
+        descaleWidth = dat["width"] as! Double
         
-        descaleView.setSize(CGFloat(hi), width: CGFloat(wi))
+        descaleView.setSize(CGFloat(descaleHight), width: CGFloat(descaleWidth), tapArea: "")
         descaleView.setNeedsDisplay()
         
-        if hi == 0 && wi == 0 {
+        if descaleHight == 0 && descaleHight == 0 {
             self.descleColoeBtn.enabled = false
         } else {
             self.descleColoeBtn.enabled = true
@@ -191,11 +193,31 @@ UIGestureRecognizerDelegate
         } else if gestureRecognizer.view == self.myTableView {
             print("Tap descaleView")
         } else if gestureRecognizer.view == self.imgView {
-            print("Tap imgView \(gestureRecognizer.locationInView(self.imgView))")
             
+            if self.myTableView.hidden != true {
+                self.myTableView.hidden = true
+            } else {
+                print("Tap imgView \(gestureRecognizer.locationInView(self.imgView))")
+                
+                let tapCenter = gestureRecognizer.locationInView(descaleView)
+                var tapArea:String = ""
+                if self.descaleView.center.x < tapCenter.x {
+                    if self.descaleView.center.y < tapCenter.y {
+                        tapArea = "DOWN-RIGHT"
+                    } else {
+                        tapArea = "TOP-RIGHT"
+                    }
+                } else {
+                    if self.descaleView.center.y < tapCenter.y {
+                        tapArea = "DOWN-LEFT"
+                    } else {
+                        tapArea = "TOP-LEFT"
+                    }
+                }
+                descaleView.setSize(CGFloat(descaleHight), width: CGFloat(descaleWidth), tapArea: tapArea)
+                descaleView.setNeedsDisplay()
+            }
             
-            
-        
         } else {
             print("Tap other")
         }
