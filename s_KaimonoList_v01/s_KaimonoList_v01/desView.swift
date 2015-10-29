@@ -15,13 +15,6 @@ class desView: UIView {
     var parTapArea: String = ""
     var parColor: Bool = true
     
-//    struct AreaFlg {
-//        var topRight: Int = -1
-//        var topLeft: Int = -1
-//        var downRight: Int = -1
-//        var downleft: Int = -1
-//    }
-//    var areaFlg = AreaFlg(topRight: -1, topLeft: -1, downRight: -1, downleft: -1)
     struct AreaFlg {
         var topRight: Bool
         var topLeft: Bool
@@ -212,8 +205,29 @@ class desView: UIView {
     }
     
     func setSize(height: CGFloat, width: CGFloat, tapArea: String) {
-        parHeight = height
-        parWidth = width
+
+        let buff:CGFloat = 20.0
+        
+        if width == 0 && height == 0 {
+            parHeight = 0
+            parWidth = 0
+        } else {
+            // 縦固定・横サイズチェック
+            let bestWidth = width * ( ( self.bounds.height - buff ) / height )
+            // 横固定・縦サイズチェック
+            let bestHeight = height * ( ( self.bounds.width - buff ) / width)
+            
+            if bestWidth <= self.bounds.width - buff {
+                parHeight = self.bounds.height - buff
+                parWidth = bestWidth
+            } else if bestHeight <= self.bounds.height - buff {
+                parHeight = bestHeight
+                parWidth = self.bounds.width - buff
+            } else {
+                parHeight = 0
+                parWidth = 0
+            }
+        }
         parTapArea = tapArea
     }
 

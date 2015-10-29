@@ -19,6 +19,8 @@
 		2F4616D11B70E51D00A6F2CD /* SwiftDataSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4616D01B70E51D00A6F2CD /* SwiftDataSample.swift */; };
 		2F54582C1BCBCCFE0043A220 /* DescaleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F54582B1BCBCCFE0043A220 /* DescaleViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		2FC2D4801B75D8FA00603214 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC2D47F1B75D8FA00603214 /* ThirdViewController.swift */; };
+		2FCA75241BDC5A0B00F4C850 /* sample.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2FCA75231BDC5A0B00F4C850 /* sample.jpg */; settings = {ASSET_TAGS = (); }; };
+		2FCA75261BDC710B00F4C850 /* DescaleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCA75251BDC710B00F4C850 /* DescaleImageView.swift */; settings = {ASSET_TAGS = (); }; };
 		2FFD94331BD05F8900B64F2E /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFD94311BD05F8900B64F2E /* CustomTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		2FFD94751BD387DF00B64F2E /* json.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2FFD94741BD387DF00B64F2E /* json.txt */; settings = {ASSET_TAGS = (); }; };
 		2FFD94771BD520DC00B64F2E /* desView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFD94761BD520DC00B64F2E /* desView.swift */; settings = {ASSET_TAGS = (); }; };
@@ -52,6 +54,8 @@
 		2F4616D01B70E51D00A6F2CD /* SwiftDataSample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftDataSample.swift; sourceTree = "<group>"; };
 		2F54582B1BCBCCFE0043A220 /* DescaleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DescaleViewController.swift; sourceTree = "<group>"; };
 		2FC2D47F1B75D8FA00603214 /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
+		2FCA75231BDC5A0B00F4C850 /* sample.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sample.jpg; sourceTree = "<group>"; };
+		2FCA75251BDC710B00F4C850 /* DescaleImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DescaleImageView.swift; sourceTree = "<group>"; };
 		2FFD94311BD05F8900B64F2E /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		2FFD94741BD387DF00B64F2E /* json.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = json.txt; sourceTree = "<group>"; };
 		2FFD94761BD520DC00B64F2E /* desView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = desView.swift; sourceTree = "<group>"; };
@@ -102,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				2F19CCBA1B698C53008045C6 /* Main.storyboard */,
+				2FCA75251BDC710B00F4C850 /* DescaleImageView.swift */,
 				2FFD94761BD520DC00B64F2E /* desView.swift */,
 				2FFD94311BD05F8900B64F2E /* CustomTableViewCell.swift */,
 				2F19CCB41B698C53008045C6 /* AppDelegate.swift */,
@@ -110,6 +115,7 @@
 				2FC2D47F1B75D8FA00603214 /* ThirdViewController.swift */,
 				2F54582B1BCBCCFE0043A220 /* DescaleViewController.swift */,
 				2FFD94741BD387DF00B64F2E /* json.txt */,
+				2FCA75231BDC5A0B00F4C850 /* sample.jpg */,
 				2F19CCBD1B698C53008045C6 /* Images.xcassets */,
 				2F19CCBF1B698C53008045C6 /* LaunchScreen.xib */,
 				2F19CCB21B698C53008045C6 /* Supporting Files */,
@@ -229,6 +235,7 @@
 				2F19CCBC1B698C53008045C6 /* Main.storyboard in Resources */,
 				2F19CCC11B698C53008045C6 /* LaunchScreen.xib in Resources */,
 				2F19CCBE1B698C53008045C6 /* Images.xcassets in Resources */,
+				2FCA75241BDC5A0B00F4C850 /* sample.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,6 +253,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FCA75261BDC710B00F4C850 /* DescaleImageView.swift in Sources */,
 				2F19CCB91B698C53008045C6 /* SecondViewController.swift in Sources */,
 				2F4616D11B70E51D00A6F2CD /* SwiftDataSample.swift in Sources */,
 				2FFD94331BD05F8900B64F2E /* CustomTableViewCell.swift in Sources */,
@@ -384,10 +392,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = s_KaimonoList_v01/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.ishidoya.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -397,10 +407,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = s_KaimonoList_v01/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.ishidoya.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

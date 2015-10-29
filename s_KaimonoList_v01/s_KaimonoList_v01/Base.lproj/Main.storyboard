@@ -522,6 +522,16 @@
                                             <action selector="doChangeColor:" destination="w7d-P4-c9d" id="fHK-Iw-qsJ"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem title="save" id="X1X-EZ-my3">
+                                        <connections>
+                                            <action selector="doSave:" destination="w7d-P4-c9d" id="ytu-8i-tye"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem systemItem="camera" id="cQY-GS-IHN">
+                                        <connections>
+                                            <action selector="doCamera:" destination="w7d-P4-c9d" id="dbr-BM-RbI"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                         </subviews>
@@ -537,6 +547,7 @@
                     <tabBarItem key="tabBarItem" systemItem="more" id="o1c-Ra-dna"/>
                     <navigationItem key="navigationItem" id="o3i-u6-VLd"/>
                     <connections>
+                        <outlet property="descaleSelectBtn" destination="DVc-KW-w4u" id="Nar-fe-v1b"/>
                         <outlet property="descleColoeBtn" destination="Ucw-sT-q3g" id="wqh-vo-Lno"/>
                         <outlet property="toolbarDescale" destination="tls-1E-tkr" id="Lzn-aU-vTc"/>
                     </connections>
