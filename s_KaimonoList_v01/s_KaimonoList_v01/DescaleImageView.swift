@@ -20,6 +20,7 @@ class DescaleImageView: UIImageView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = UIColor.clearColor()
+        self.contentMode = UIViewContentMode.ScaleAspectFit
     }
 
     required init?(coder aDecoder: NSCoder) {
