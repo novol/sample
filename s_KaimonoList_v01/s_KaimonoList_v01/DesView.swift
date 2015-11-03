@@ -8,7 +8,7 @@
 
 import UIKit
 
-class desView: UIView {
+class DesView: UIView {
 
     var parHeight: CGFloat = 0.0
     var parWidth: CGFloat = 0.0

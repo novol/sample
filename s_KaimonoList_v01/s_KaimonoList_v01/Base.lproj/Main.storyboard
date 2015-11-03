@@ -531,6 +531,16 @@
                                             <action selector="doCamera:" destination="w7d-P4-c9d" id="dbr-BM-RbI"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem title="回" id="i1b-pI-LCA">
+                                        <connections>
+                                            <action selector="doRotate:" destination="w7d-P4-c9d" id="SKa-jb-Fpp"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="白黒" id="LSc-rJ-jOS">
+                                        <connections>
+                                            <action selector="doMonochrome:" destination="w7d-P4-c9d" id="JKz-bf-SkK"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                         </subviews>

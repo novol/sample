@@ -30,7 +30,7 @@ class DescaleViewController:
     var myTableView: UITableView!
 
     // Descaleの表示View
-    var descaleView:desView!
+    var descaleView:DesView!
     
     // Imageの表示View
     var baseView:UIView!
@@ -41,10 +41,78 @@ class DescaleViewController:
     var descaleHight:Double = 0.0
     var descaleWidth:Double = 0.0
     var descaleColor:Bool = true
+    var angle:CGFloat = 0.0
+    
+    // ベース画像.
+    let myInputImage = CIImage(image: UIImage(named: "sample.jpg")!)
+    
+    // ImageView.
+    var myImageView: UIImageView!
+ 
+    
     
     @IBOutlet weak var toolbarDescale: UIToolbar!
     @IBOutlet weak var descaleSelectBtn: UIBarButtonItem!
     @IBOutlet weak var descleColoeBtn: UIBarButtonItem!
+    
+    @IBAction func doMonochrome(sender: UIBarButtonItem) {
+        
+        
+        // カラーエフェクトを指定してCIFilterをインスタンス化.
+        let myMonochromeFilter = CIFilter(name: "CIColorMonochrome")
+        
+        // イメージのセット.
+        myMonochromeFilter!.setValue(myInputImage, forKey: kCIInputImageKey)
+        
+        // ものくろ化するための値の調整.
+        myMonochromeFilter!.setValue(CIColor(red: 0.5, green: 0.5, blue: 0.5), forKey: kCIInputColorKey)
+        myMonochromeFilter!.setValue(1.0, forKey: kCIInputIntensityKey)
+        
+        // フィルターを通した画像をアウトプット.
+        let myOutputImage : CIImage = myMonochromeFilter!.outputImage!
+        
+        // 再びUIViewにセット.
+        myImageView.image = UIImage(CIImage: myOutputImage)
+        
+        // 再描画.
+        myImageView.setNeedsDisplay()
+
+//        // カラーエフェクトを指定してCIFilterをインスタンス化.
+//        let myMonochromeFilter = CIFilter(name: "CIColorMonochrome")
+//        
+//        // イメージのセット.
+//        myMonochromeFilter!.setValue(self.imgView.image, forKey: kCIInputImageKey)
+//        
+//        // ものくろ化するための値の調整.
+//        myMonochromeFilter!.setValue(CIColor(red: 0.5, green: 0.5, blue: 0.5), forKey: kCIInputColorKey)
+//        myMonochromeFilter!.setValue(1.0, forKey: kCIInputIntensityKey)
+//        
+//        // フィルターを通した画像をアウトプット.
+//        let myOutputImage : CIImage = myMonochromeFilter!.outputImage!
+//        
+//        // 再びUIViewにセット.
+//        self.imgView.image = UIImage(CIImage: myOutputImage)
+//        
+//        // 再描画.
+//        self.imgView.setNeedsDisplay()
+        
+    }
+
+    @IBAction func doRotate(sender: UIBarButtonItem) {
+//        // 画像を回転する.
+//        let myRotateView:UIImageView = UIImageView(frame: CGRect(x: 100, y: 250, width: 80, height: 80))
+//        
+//        // UIImageViewに画像を設定する.
+//        myRotateView.image = myImage
+//        
+        // radianで回転角度を指定(90度)する.
+        angle = angle + CGFloat((90.0 * M_PI) / 180.0)
+        
+        // 回転用のアフィン行列を生成する.
+        self.imgView.transform = CGAffineTransformMakeRotation(angle)
+        
+        
+    }
     
     @IBAction func doCamera(sender: UIBarButtonItem) {
         self.pickImageFromCamera()
@@ -74,7 +142,10 @@ class DescaleViewController:
     // 写真を選択した時に呼ばれる
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         if info[UIImagePickerControllerOriginalImage] != nil {
-            
+
+            // 回転用のアフィン行列を生成する.(0度)
+            self.imgView.transform = CGAffineTransformMakeRotation(0)
+
             let image = info[UIImagePickerControllerOriginalImage] as! UIImage
             self.imgView.image = image
         }
@@ -179,7 +250,7 @@ class DescaleViewController:
         self.view.sendSubviewToBack(baseView)
 
         // DESCALE Viewの生成
-        descaleView = desView(frame: CGRectMake(0, 0, self.view.bounds.width, self.view.bounds.height - 44 - 44))
+        descaleView = DesView(frame: CGRectMake(0, 0, self.view.bounds.width, self.view.bounds.height - 44 - 44))
         descaleView.userInteractionEnabled = false
         self.view.addSubview(descaleView)
         
@@ -213,6 +284,12 @@ class DescaleViewController:
             self.descleColoeBtn.enabled = true
         }
 
+        // UIImageViewの生成.
+        myImageView = UIImageView(frame: CGRectMake(0, 0, self.view.frame.size.width - 88, self.view.frame.size.height - 88 ))
+        myImageView.image = UIImage(CIImage: myInputImage!)
+        self.view.addSubview(myImageView)
+
+    
     }
     
 
@@ -380,104 +457,5 @@ class DescaleViewController:
             }
         }
     }
-
-//    private func pan(gesture:UIPanGestureRecognizer){
-//        if self.watchImageMode{
-//            
-//            var translation = gesture.translationInView(self.view)
-//            
-//            if abs(self.beforePoint.x) > 0.0 || abs(self.beforePoint.y) > 0.0{
-//                translation = CGPointMake(self.beforePoint.x + translation.x, self.beforePoint.y + translation.y)
-//            }
-//            
-//            switch gesture.state{
-//            case .Changed:
-//                let scaleTransform = CGAffineTransformMakeScale(self.currentScale, self.currentScale)
-//                let translationTransform = CGAffineTransformMakeTranslation(translation.x, translation.y)
-//                self.imageView.transform = CGAffineTransformConcat(scaleTransform, translationTransform)
-//            case .Ended , .Cancelled:
-//                self.beforePoint = translation
-//            default:
-//                NSLog("no action")
-//            }
-//        }
-//    }
-    
-//    func panGesture(gesture:UIPanGestureRecognizer){
-//        if gesture.view == self.view {
-//            print("Pan View")
-//        } else if gesture.view == self.descaleView {
-//            print("Pan descaleView")
-//        } else if gesture.view == self.myTableView {
-//            print("Pan descaleView")
-//        } else if gesture.view == self.baseView {
-//            print("Pan baseView")
-//
-//            if let gestureView = gesture.view{
-//            
-//                var translation = gesture.translationInView(gestureView)
-//                
-//                if abs(self.beforePoint.x) > 0.0 || abs(self.beforePoint.y) > 0.0{
-//                    translation = CGPointMake(self.beforePoint.x + translation.x, self.beforePoint.y + translation.y)
-//                }
-//                
-//                switch gesture.state{
-//                case .Changed:
-//                    let scaleTransform = CGAffineTransformMakeScale(self.currentScale, self.currentScale)
-//                    let translationTransform = CGAffineTransformMakeTranslation(translation.x, translation.y)
-//                    self.imgView.transform = CGAffineTransformConcat(scaleTransform, translationTransform)
-//                case .Ended , .Cancelled:
-//                    self.beforePoint = translation
-//                default:
-//                    NSLog("no action")
-//                }
-//            }
-//        } else {
-//            print("Pan Else")
-//        }
-//        
-//    }
-    
-    
-//    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
-//        let touch = touches.anyObject()! as UITouch
-//        let location = touch.locationInView(view)
-//    }
-    
-    
-    // MAKE: UIActiveViewController
-/*
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-        
-        let image =  info[UIImagePickerControllerOriginalImage] as! UIImage
-        
-//        var editImage = adjustImageRotatetion(image)
-        var editImage = image
-        
-//        imageOriginalSize = editImage.size
-//        editImage = changeSizeImage(editImage)
-//        editImage = makeSqureImage(editImage)
-//        editImage = makeImageWithFrameImage(editImage)
-//        editImage = makeImageWithStampimages(editImage)
-        UIImageWriteToSavedPhotosAlbum(
-            editImage,
-            self,
-            Selector("didSaveToPhotosApp:error:contextInfo:"),
-            UnsafeMutablePointer()
-        )
-        print("写真を撮りました")
-    }
-*/
-
-/*
-    func didSaveToPhotosApp(image: UIImage!, error: NSErrorPointer, contextInfo: UnsafePointer<()>) {
-        print("撮った写真を写真アプリに保存しました。")
-        
-//        self.resetAllStamps()
-        
-        let activityViewConstroller: UIActivityViewController = UIActivityViewController(activityItems: [image], applicationActivities: nil)
-        self.presentViewController(activityViewConstroller, animated: true, completion: nil)
-    }
-*/
 
 }
