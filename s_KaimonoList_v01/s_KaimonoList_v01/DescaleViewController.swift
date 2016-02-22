@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 import Accounts
 
 class DescaleViewController:
@@ -17,85 +18,75 @@ class DescaleViewController:
     UINavigationControllerDelegate,
     UIGestureRecognizerDelegate
 {
+
+    // MARK: - 変数
     // private variables
     private var watchImageMode = true
     private var beforePoint = CGPointMake(0.0, 0.0)
     private var currentScale:CGFloat = 1.0
+    private var lastScale:CGFloat = 1.0
 
     var num:[String] = []
     var jsonArray:NSArray = []
     var myApp = UIApplication.sharedApplication().delegate as! AppDelegate
 
-    // Tableで使用する配列を設定する
-    var myTableView: UITableView!
-
-    // Descaleの表示View
+    // 最背面でguestureを制御するView
+    var baseView:UIView!
+    
+    // Descaleの表示View (罫線を描画)
     var descaleView:DesView!
     
-    // Imageの表示View
-    var baseView:UIView!
-
-    // Imageの表示View
-    var imgView:DescaleImageView!
-
+    // ImageView.
+    var myImageView: UIImageView!
+    
+    // モノクロ画像の退避変数.
+    var grayImage:UIImage?
+    var orgImage:UIImage?
+    
+    // Tableで使用する配列を設定する
+    var myTableView: UITableView!
+    
     var descaleHight:Double = 0.0
     var descaleWidth:Double = 0.0
     var descaleColor:Bool = true
     var angle:CGFloat = 0.0
     
-    // ベース画像.
-    let myInputImage = CIImage(image: UIImage(named: "sample.jpg")!)
-    
-    // ImageView.
-    var myImageView: UIImageView!
- 
+    var monoFlg:Bool = true
+    var currentTransForm:CGAffineTransform!
     
     
+//-- test用
+//    // Imageの表示View
+//    var imgView:DescaleImageView!
+    
+//    let myInputImage = CIImage(image: UIImage(named: "sample.jpg")!)
+
+    // MARK: - @IBOutlet
     @IBOutlet weak var toolbarDescale: UIToolbar!
     @IBOutlet weak var descaleSelectBtn: UIBarButtonItem!
     @IBOutlet weak var descleColoeBtn: UIBarButtonItem!
     
+    // MARK: - @IBAction
     @IBAction func doMonochrome(sender: UIBarButtonItem) {
         
+//        let roateTrans = CGAffineTransformMakeRotation(angle)
+//        let currentTransForm = self.myImageView.transform;
         
-        // カラーエフェクトを指定してCIFilterをインスタンス化.
-        let myMonochromeFilter = CIFilter(name: "CIColorMonochrome")
+        if monoFlg == true {
+            monoFlg = false
+            self.myImageView.image = grayImage;
+        } else {
+            monoFlg = true
+            self.myImageView.image = orgImage;
+        }
+
+//        // ピンチジェスチャー開始時からの拡大率の変化を、imgViewのアフィン変形の状態に設定する事で、拡大する。
+//        self.myImageView.transform = CGAffineTransformConcat(currentTransForm, roateTrans);
         
-        // イメージのセット.
-        myMonochromeFilter!.setValue(myInputImage, forKey: kCIInputImageKey)
-        
-        // ものくろ化するための値の調整.
-        myMonochromeFilter!.setValue(CIColor(red: 0.5, green: 0.5, blue: 0.5), forKey: kCIInputColorKey)
-        myMonochromeFilter!.setValue(1.0, forKey: kCIInputIntensityKey)
-        
-        // フィルターを通した画像をアウトプット.
-        let myOutputImage : CIImage = myMonochromeFilter!.outputImage!
         
         // 再びUIViewにセット.
-        myImageView.image = UIImage(CIImage: myOutputImage)
-        
-        // 再描画.
-        myImageView.setNeedsDisplay()
-
-//        // カラーエフェクトを指定してCIFilterをインスタンス化.
-//        let myMonochromeFilter = CIFilter(name: "CIColorMonochrome")
-//        
-//        // イメージのセット.
-//        myMonochromeFilter!.setValue(self.imgView.image, forKey: kCIInputImageKey)
-//        
-//        // ものくろ化するための値の調整.
-//        myMonochromeFilter!.setValue(CIColor(red: 0.5, green: 0.5, blue: 0.5), forKey: kCIInputColorKey)
-//        myMonochromeFilter!.setValue(1.0, forKey: kCIInputIntensityKey)
-//        
-//        // フィルターを通した画像をアウトプット.
-//        let myOutputImage : CIImage = myMonochromeFilter!.outputImage!
-//        
-//        // 再びUIViewにセット.
-//        self.imgView.image = UIImage(CIImage: myOutputImage)
-//        
-//        // 再描画.
-//        self.imgView.setNeedsDisplay()
-        
+        self.myImageView.contentMode = UIViewContentMode.ScaleAspectFit
+        self.myImageView.setNeedsDisplay()
     }
 
     @IBAction func doRotate(sender: UIBarButtonItem) {
@@ -105,18 +96,90 @@ class DescaleViewController:
 //        // UIImageViewに画像を設定する.
 //        myRotateView.image = myImage
 //        
-        // radianで回転角度を指定(90度)する.
-        angle = angle + CGFloat((90.0 * M_PI) / 180.0)
+//        // radianで回転角度を指定(90度)する.
+//        angle = angle + CGFloat((90.0 * M_PI) / 180.0)
+//        
+//        // 回転用のアフィン行列を生成する.
+//        self.imgView.transform = CGAffineTransformMakeRotation(angle)
         
-        // 回転用のアフィン行列を生成する.
-        self.imgView.transform = CGAffineTransformMakeRotation(angle)
+//        self.myImageView.transform = CGAffineTransformRotate(self.myImageView.transform, CGFloat(M_PI / 2.0))
+
+//        angle = angle + CGFloat((90.0 * M_PI) / 180.0)
+//        self.myImageView.transform = CGAffineTransformMakeRotation(angle)
+
+        angle = CGFloat(M_PI / 2.0)
+        let roateTrans = CGAffineTransformMakeRotation(angle)
+        let currentTransForm = self.myImageView.transform;
         
-        
+        // ピンチジェスチャー開始時からの拡大率の変化を、imgViewのアフィン変形の状態に設定する事で、拡大する。
+        self.myImageView.transform = CGAffineTransformConcat(currentTransForm, roateTrans);
+
     }
     
     @IBAction func doCamera(sender: UIBarButtonItem) {
         self.pickImageFromCamera()
+    }
+    
+    @IBAction func doLib(sender: UIBarButtonItem) {
         self.pickImageFromLibrary()
+    }
+
+    @IBAction func doChangeColor(sender: UIBarButtonItem) {
+        if descaleColor == true {
+            descaleColor = false
+        } else {
+            descaleColor = true
+        }
+        descaleView.setColor(descaleColor)
+        descaleView.setNeedsDisplay()
+    }
+    
+    @IBAction func doViewTable(sender: UIBarButtonItem) {
+        if myTableView.hidden == false {
+            myTableView.hidden = true
+        } else {
+            myTableView.hidden = false
+        }
+    }
+    
+    @IBAction func doSave(sender: UIBarButtonItem) {
+        
+        if myTableView.hidden == false {
+            myTableView.hidden = true
+        }
+        
+        // 共有する項目
+        let shareText = "descale "
+        let shareWebsite = NSURL(string: "https://www.apple.com/jp/watch/")!
+        
+        // スクリーンショットの取得開始
+        UIGraphicsBeginImageContextWithOptions(view.bounds.size, true, 1.0)
+        
+        // 描画
+        view.drawViewHierarchyInRect(view.bounds, afterScreenUpdates: true)
+        
+        // 描画が行われたスクリーンショットの取得
+        let shareImage = UIGraphicsGetImageFromCurrentImageContext()
+        
+        // スクリーンショットの取得終了
+        UIGraphicsEndImageContext()
+        
+        let activityItems = [shareText, shareWebsite, shareImage]
+        
+        // 初期化処理
+        let activityVC = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
+        
+        // 使用しないアクティビティタイプ
+        let excludedActivityTypes = [
+            UIActivityTypePostToWeibo,
+//            UIActivityTypeSaveToCameraRoll,
+//            UIActivityTypePrint
+        ]
+        
+        activityVC.excludedActivityTypes = excludedActivityTypes
+        
+        // UIActivityViewControllerを表示
+        self.presentViewController(activityVC, animated: true, completion: nil)
     }
     
     // 写真を撮ってそれを選択
@@ -138,63 +201,119 @@ class DescaleViewController:
             self.presentViewController(controller, animated: true, completion: nil)
         }
     }
-
+    
     // 写真を選択した時に呼ばれる
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         if info[UIImagePickerControllerOriginalImage] != nil {
-
+            
+            print("通ってる")
+            
+            
             // 回転用のアフィン行列を生成する.(0度)
-            self.imgView.transform = CGAffineTransformMakeRotation(0)
+            self.myImageView.transform = CGAffineTransformMakeRotation(0)
+            
+            var image = info[UIImagePickerControllerOriginalImage] as! UIImage
+            
+            // おまじない始まり
+            UIGraphicsBeginImageContext(image.size);
+            image.drawInRect(CGRectMake(0, 0, image.size.width, image.size.height))
+            image = UIGraphicsGetImageFromCurrentImageContext();
+            UIGraphicsEndImageContext();
+            // おまじない終わり
 
-            let image = info[UIImagePickerControllerOriginalImage] as! UIImage
-            self.imgView.image = image
+            
+            
+            
+            
+            var perHeight:CGFloat = 1.0
+            var perWidth:CGFloat = 1.0
+            
+            let motifSize:CGSize  = CGRectMake(0, 0, self.view.frame.size.width - 88, self.view.frame.size.height - 88 ).size
+
+            if ( motifSize.height < image.size.height)
+            {
+                perHeight = motifSize.height / image.size.height;
+            }
+            if ( motifSize.width < image.size.width)
+            {
+                perWidth = motifSize.width / image.size.width;
+            }
+            
+            var rect:CGRect
+            
+            if ( perHeight != 1.0 || perWidth != 1.0) {
+                
+                if ( perHeight > perWidth )
+                {
+                    rect = CGRectMake(
+                        0,
+                        0,
+                        image.size.width  * perHeight,
+                        image.size.height * perHeight);
+                    UIGraphicsBeginImageContextWithOptions(rect.size, false, 0.0);
+                    image.drawInRect(rect);
+                    grayImage = UIGraphicsGetImageFromCurrentImageContext();
+                    UIGraphicsEndImageContext();
+                } else {
+                    rect = CGRectMake(
+                        0,
+                        0,
+                        image.size.width  * perWidth,
+                        image.size.height * perWidth);
+                    UIGraphicsBeginImageContextWithOptions(rect.size, false, 0.0);
+                    image.drawInRect(rect);
+                    grayImage = UIGraphicsGetImageFromCurrentImageContext();
+                    UIGraphicsEndImageContext();
+                }
+            } else {
+                rect = CGRectMake(
+                    0,
+                    0,
+                    image.size.width,
+                    image.size.height);
+                grayImage = image;
+            }
+
+            // オリジナル画像を退避
+            orgImage = image
+            
+
+            
+            // 画像のデータを取得する
+//            let image:UIImage = info[UIImagePickerControllerOriginalImage] as UIImage;
+            
+            
+            picker.dismissViewControllerAnimated(true, completion: nil)
+            
+            
+            
+            
+            // モノクロ化
+            grayImage = getGrayImage(grayImage!)
+            
+            print("image size: \(image)")
+            print("grayImage size: \(grayImage?.size)")
+//            var imageRect:CGRect  = rect
+//            imageRect.origin.x = 0;
+//            imageRect.origin.y = 0;
+            
+            self.myImageView.transform = CGAffineTransformIdentity;
+            self.myImageView.contentMode = UIViewContentMode.ScaleAspectFit
+            self.myImageView.frame = rect;
+            self.myImageView.center = self.view.center
+
+            self.myImageView.image = image;
+            self.myImageView.setNeedsDisplay()
+
+            // 変数の初期化
+            angle = 0.0
+            
+            currentTransForm = self.myImageView.transform
         }
         picker.dismissViewControllerAnimated(true, completion: nil)
     }
     
-    @IBAction func doChangeColor(sender: UIBarButtonItem) {
-        if descaleColor == true {
-            descaleColor = false
-        } else {
-            descaleColor = true
-        }
-        descaleView.setColor(descaleColor)
-        descaleView.setNeedsDisplay()
-    }
-    
-    @IBAction func doViewTable(sender: UIBarButtonItem) {
-        if myTableView.hidden == false {
-            myTableView.hidden = true
-        } else {
-            myTableView.hidden = false
-        }
-    }
-    
-    // MARK: - UIActivityViewController
-    @IBAction func doSave(sender: UIBarButtonItem) {
-        // 共有する項目
-        let shareText = "descale "
-        let shareWebsite = NSURL(string: "https://www.apple.com/jp/watch/")!
-        let shareImage = UIImage(named: "sample.jpg")!
-        
-        let activityItems = [shareText, shareWebsite, shareImage]
-        
-        // 初期化処理
-        let activityVC = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
-        
-        // 使用しないアクティビティタイプ
-        let excludedActivityTypes = [
-            UIActivityTypePostToWeibo,
-//            UIActivityTypeSaveToCameraRoll,
-//            UIActivityTypePrint
-        ]
-        
-        activityVC.excludedActivityTypes = excludedActivityTypes
-        
-        // UIActivityViewControllerを表示
-        self.presentViewController(activityVC, animated: true, completion: nil)
-    }
-    
+    // MARK: - override func
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -221,9 +340,9 @@ class DescaleViewController:
 //            print("型:\(type) 号数:\(gosu) サイズ:\(s) 高さ:\(h) 幅:\(w)")
         }
         
-        // myViewの生成
+        // baseViewの生成
         baseView = UIView(frame: CGRectMake(0, 0, self.view.bounds.width, self.view.bounds.height - 44 - 44))
-        baseView.backgroundColor = UIColor.orangeColor()
+        baseView.backgroundColor = UIColor.grayColor()
         baseView.userInteractionEnabled = true
 
         // ジェスチャーの追加
@@ -236,26 +355,30 @@ class DescaleViewController:
         let pinchGesture = UIPinchGestureRecognizer(target: self, action: "handleGesture:")
         self.baseView.addGestureRecognizer(pinchGesture)
         
-        
-        // Viewの追加
+        // baseViewの追加
         self.view.addSubview(baseView)
 
-        //カスタマイズImageViewを生成
-        imgView = DescaleImageView(frame: baseView.frame)
-        
-        //カスタマイズViewを追加
-        self.baseView.addSubview(imgView)
+//        //カスタマイズImageViewを生成
+//        imgView = DescaleImageView(frame: baseView.frame)
+//        
+//        //カスタマイズViewを追加
+//        self.baseView.addSubview(imgView)
         
         // baseVieを最背面に移動
         self.view.sendSubviewToBack(baseView)
 
+        // UIImageViewの生成.
+        myImageView = UIImageView(frame: CGRectMake(0, 0, self.view.frame.size.width - 88, self.view.frame.size.height - 88 ))
+//        myImageView.image = UIImage(CIImage: myInputImage!)
+        self.view.addSubview(myImageView)
+        
         // DESCALE Viewの生成
         descaleView = DesView(frame: CGRectMake(0, 0, self.view.bounds.width, self.view.bounds.height - 44 - 44))
         descaleView.userInteractionEnabled = false
         self.view.addSubview(descaleView)
         
         // TableViewの生成する(status barの高さ分ずらして表示).
-        myTableView = UITableView(frame: CGRect(x: 0, y: self.view.bounds.height - 200 - self.toolbarDescale.bounds.height - 44, width: 190, height: 200))
+        myTableView = UITableView(frame: CGRect(x: 0, y: self.view.bounds.height - 200 - self.toolbarDescale.bounds.height - 50, width: 190, height: 200))
         myTableView.backgroundColor = UIColor.whiteColor()
         myTableView.layer.borderColor = UIColor.grayColor().CGColor
         myTableView.layer.borderWidth = 1.0
@@ -283,16 +406,12 @@ class DescaleViewController:
         } else {
             self.descleColoeBtn.enabled = true
         }
+        
+        // toolBarを最前面に移動
+        self.view.bringSubviewToFront(self.toolbarDescale)
+        
 
-        // UIImageViewの生成.
-        myImageView = UIImageView(frame: CGRectMake(0, 0, self.view.frame.size.width - 88, self.view.frame.size.height - 88 ))
-        myImageView.image = UIImage(CIImage: myInputImage!)
-        self.view.addSubview(myImageView)
-
-    
     }
-    
-
     
     //-----------------------------------
     // MARK: - TableViewのハンドラ
@@ -339,6 +458,23 @@ class DescaleViewController:
             self.descaleSelectBtn.title = dat["gosu"] as? String
         }
 
+    }
+    
+    //-----------------------------------
+    // MARK: - Gestureのハンドラ
+    func handleGesture(gesture: UIGestureRecognizer){
+        
+//        if myTableView.hidden == false {
+//            myTableView.hidden = true
+//        }
+        
+        if let tapGesture = gesture as? UITapGestureRecognizer{
+            tap(tapGesture)
+        }else if let pinchGesture = gesture as? UIPinchGestureRecognizer{
+            pinch(pinchGesture)
+        }else if let panGesture = gesture as? UIPanGestureRecognizer{
+            pan(panGesture)
+        }
     }
     
     func tap(gesture: UITapGestureRecognizer){
@@ -389,73 +525,155 @@ class DescaleViewController:
         
     }
 
-    func handleGesture(gesture: UIGestureRecognizer){
-        if let tapGesture = gesture as? UITapGestureRecognizer{
-            tap(tapGesture)
-        }else if let pinchGesture = gesture as? UIPinchGestureRecognizer{
-            pinch(pinchGesture)
-        }else if let panGesture = gesture as? UIPanGestureRecognizer{
-            pan(panGesture)
-        }
-    }
-    
     private func pan(gesture:UIPanGestureRecognizer){
         
-        print("func pan")
+//        print("func pan")
         
-        if self.watchImageMode{
-            
-            if gesture.view == self.baseView {
-                print("Pan baseView")
-            }
-            
-            var translation = gesture.translationInView(self.view)
-            
-            if abs(self.beforePoint.x) > 0.0 || abs(self.beforePoint.y) > 0.0{
-                translation = CGPointMake(self.beforePoint.x + translation.x, self.beforePoint.y + translation.y)
-            }
-            
-            switch gesture.state{
-            case .Changed:
-                let scaleTransform = CGAffineTransformMakeScale(self.currentScale, self.currentScale)
-                let translationTransform = CGAffineTransformMakeTranslation(translation.x, translation.y)
-                self.imgView.transform = CGAffineTransformConcat(scaleTransform, translationTransform)
-            case .Ended , .Cancelled:
-                self.beforePoint = translation
-            default:
-                NSLog("no action")
-            }
-        }
+        let translation = gesture.translationInView(self.view)
+        var center =  self.myImageView.center
+        let  frameView = self.view.frame;
+        
+//        //centerがviewの内側であること
+//        if (translation.x + center.x < 0) {
+//            gesture.setTranslation(CGPointZero, inView: self.view)
+//            return;
+//        }
+//        if (translation.y + center.y < 0) {
+//            gesture.setTranslation(CGPointZero, inView: self.view)
+//            return;
+//        }
+//        if (translation.x + center.x > frameView.size.width) {
+//            gesture.setTranslation(CGPointZero, inView: self.view)
+//            return;
+//        }
+//        if (translation.y + center.y > frameView.size.height) {
+//            gesture.setTranslation(CGPointZero, inView: self.view)
+//            return;
+//        }
+        
+        center.x = center.x + translation.x;
+        center.y = center.y + translation.y;
+        
+        self.myImageView.center = center;
+        gesture.setTranslation(CGPointZero, inView: self.view)
     }
 
     private func pinch(gesture:UIPinchGestureRecognizer){
         
-        if self.watchImageMode{
-            
-            if gesture.view == self.baseView {
-                print("Pinch baseView")
-            }
-            
-            var scale = gesture.scale
-            if self.currentScale > 1.0{
-                scale = self.currentScale + (scale - 1.0)
-            }
-            switch gesture.state{
-            case .Changed:
-                let scaleTransform = CGAffineTransformMakeScale(scale, scale)
-                let transitionTransform = CGAffineTransformMakeTranslation(self.beforePoint.x, self.beforePoint.y)
-                self.imgView.transform = CGAffineTransformConcat(scaleTransform, transitionTransform)
-            case .Ended , .Cancelled:
-                if scale <= 1.0{
-                    self.currentScale = 1.0
-                    self.imgView.transform = CGAffineTransformIdentity
-                }else{
-                    self.currentScale = scale
-                }
-            default:
-                NSLog("not action")
-            }
+        // ピンチジェスチャー発生時に、Imageの現在のアフィン変形の状態を保存する
+        if (gesture.state == UIGestureRecognizerState.Began) {
+            currentTransForm = self.myImageView.transform;
+            // currentTransFormは、フィールド変数。imgViewは画像を表示するUIImageView型のフィールド変数。
         }
+
+        // ピンチジェスチャー発生時から、どれだけ拡大率が変化したかを取得する
+        // 2本の指の距離が離れた場合には、1以上の値、近づいた場合には、1以下の値が取得できる
+        let scale:CGFloat = gesture.scale
+
+        // ピンチジェスチャー開始時からの拡大率の変化を、imgViewのアフィン変形の状態に設定する事で、拡大する。
+        self.myImageView.transform = CGAffineTransformConcat(currentTransForm, CGAffineTransformMakeScale(scale, scale));
     }
+
+    //-----------------------------------
+    // MARK: - Monochro化のハンドラ
+    private func getGrayImage(img:UIImage) -> UIImage {
+        // ベース画像.
+        let myInputImage = CIImage(image: img)
+        
+        // カラーエフェクトを指定してCIFilterをインスタンス化.
+        let myMonochromeFilter = CIFilter(name: "CIColorMonochrome")
+        
+        // イメージのセット.
+        myMonochromeFilter!.setValue(myInputImage, forKey: kCIInputImageKey)
+        
+        // モノクロ化するための値の調整.
+        myMonochromeFilter!.setValue(CIColor(red: 0.5, green: 0.5, blue: 0.5), forKey: kCIInputColorKey)
+        myMonochromeFilter!.setValue(1.0, forKey: kCIInputIntensityKey)
+        
+        // フィルターを通した画像をアウトプット.
+        let myOutputImage : CIImage = myMonochromeFilter!.outputImage!
+        
+        return UIImage(CIImage: myOutputImage)
+    }
+
+//    private func getBlackAndWhiteVersionOfImage(anImage:UIImage?) -> UIImage? {
+//        
+//        var newImage:UIImage;
+////
+////        if let _ = anImage {
+//        
+//            let size = anImage!.size
+////            var rect = CGRectMake(0.0,0.0, size.width, size.height);
+//            let cgImage:CGImageRef = anImage!.CGImage!;
+//            
+//            let dataProvider:CGDataProviderRef = CGImageGetDataProvider(anImage!.CGImage!)!;
+//            var data:CFDataRef = CGDataProviderCopyData(dataProvider)!;
+//            let bytesPerRow = CGImageGetBytesPerRow(cgImage);
+//            let width: Int = Int(size.width)
+//            let height: Int = Int(size.height)
+//            let colorSpace:CGColorSpaceRef = CGColorSpaceCreateDeviceGray()!;
+//            let bitsPerComponent = CGImageGetBitsPerComponent(cgImage);
+//            let bitmapInfo = CGBitmapInfo(rawValue: (CGBitmapInfo.ByteOrder32Little.rawValue | CGImageAlphaInfo.PremultipliedFirst.rawValue))
+//            let newContext: CGContextRef = CGBitmapContextCreate(CFDataGe213331tBytePtr(data), width, height, bitsPerComponent, bytesPerRow, colorSpace, bitmapInfo.rawValue)! as CGContextRef
+//
+//            let imageRef: CGImageRef = CGBitmapContextCreateImage(newContext)!
+//            newImage = UIImage(CGImage: imageRef, scale: 1.0, orientation: UIImageOrientation.Right)
+//
+//        return newImage;
+//    }
+
+    
+//    private func imageFromSampleBuffer(sampleBuffer :CMSampleBufferRef) -> UIImage {
+//
+//        let imageBuffer: CVImageBufferRef = CMSampleBufferGetImageBuffer(sampleBuffer)!
+//        CVPixelBufferLockBaseAddress(imageBuffer, 0)
+//        let baseAddress: UnsafeMutablePointer<Void> = CVPixelBufferGetBaseAddressOfPlane(imageBuffer, Int(0))
+//        
+//        let bytesPerRow: Int = CVPixelBufferGetBytesPerRow(imageBuffer)
+//        let width: Int = CVPixelBufferGetWidth(imageBuffer)
+//        let height: Int = CVPixelBufferGetHeight(imageBuffer)
+//        
+//        let colorSpace:CGColorSpaceRef = CGColorSpaceCreateDeviceGray()!;
+//        
+//        let bitsPerCompornent: Int = 8
+//
+//        let bitmapInfo = CGBitmapInfo(rawValue: (CGBitmapInfo.ByteOrder32Little.rawValue | CGImageAlphaInfo.PremultipliedFirst.rawValue))
+//        let newContext: CGContextRef = CGBitmapContextCreate(baseAddress, width, height, bitsPerCompornent, bytesPerRow, colorSpace, bitmapInfo.rawValue)! as CGContextRef
+//        let imageRef: CGImageRef = CGBitmapContextCreateImage(newContext)!
+//        let resultImage = UIImage(CGImage: imageRef, scale: 1.0, orientation: UIImageOrientation.Right)
+//        
+//        return resultImage
+//    }
+
+//    - (UIImage *)getBlackAndWhiteVersionOfImage:(UIImage *)anImage {
+//    
+//    UIImage *newImage;
+//    
+//    if (anImage) {
+//    CGSize size = anImage.size;
+//    CGRect rect = CGRectMake(0.0f,0.0f, size.width, size.height);
+//    
+//    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceGray();
+//    CGImageRef cgImage = anImage.CGImage;
+//    unsigned long bytesPerRow = CGImageGetBytesPerRow(cgImage);
+//    unsigned long bitsPerComponent = CGImageGetBitsPerComponent(cgImage);
+//    CGContextRef context = CGBitmapContextCreate(nil,
+//    size.width,
+//    size.height,
+//    bitsPerComponent,
+//    bytesPerRow,
+//    colorSpace,
+//    (CGBitmapInfo)kCGImageAlphaNone);
+//    
+//    CGColorSpaceRelease(colorSpace);
+//    CGContextDrawImage(context, rect, [anImage CGImage]);
+//    CGImageRef grayscale = CGBitmapContextCreateImage(context);
+//    CGContextRelease(context);
+//    newImage = [UIImage imageWithCGImage:grayscale];
+//    CFRelease(grayscale);
+//    
+//    }
+//    return newImage;
+//    }
 
 }

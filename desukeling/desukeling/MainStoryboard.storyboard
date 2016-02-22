@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="2">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="5">
+            <objects>
+                <viewController id="2" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" autoresizesSubviews="NO" contentMode="scaleToFill" id="3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView multipleTouchEnabled="YES" contentMode="scaleAspectFit" id="Xfg-SR-W0T">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="brt-jE-ney" appends="YES" id="Ckq-qJ-9FY"/>
+                                    <outletCollection property="gestureRecognizers" destination="yiC-IS-iS0" appends="YES" id="whd-D8-7ge"/>
+                                </connections>
+                            </imageView>
+                            <view userInteractionEnabled="NO" contentMode="scaleAspectFit" id="efL-uE-N1x" customClass="DescaleFrame">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="dCw-We-48E">
+                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.29803922772407532" green="0.29803922772407532" blue="0.29803922772407532" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Qmv-i0-8Ue">
+                                <rect key="frame" x="20" y="532" width="71" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <toolbar autoresizesSubviews="NO" contentMode="scaleToFill" barStyle="blackTranslucent" id="eJD-Sc-M2u">
+                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="action" id="XiC-Ph-PUL">
+                                        <connections>
+                                            <action selector="doSheet:" destination="2" id="ybn-I8-H4f"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="9" style="plain" systemItem="fixedSpace" id="chC-Ec-bwW"/>
+                                    <barButtonItem title="desukeru" width="71" id="Uli-wv-Rg6">
+                                        <connections>
+                                            <action selector="doDeskel:" destination="2" id="GRO-Ko-O4N"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="9" style="plain" systemItem="fixedSpace" id="tOb-Lb-mUe"/>
+                                    <barButtonItem image="color.png" width="40" style="plain" id="3aN-bS-ynb">
+                                        <connections>
+                                            <action selector="doColorChange:" destination="2" id="RPh-ld-Gwu"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="9" style="plain" systemItem="fixedSpace" id="S5r-tX-cye"/>
+                                    <barButtonItem image="turn_v2.png" style="plain" id="6aM-P6-T4S">
+                                        <connections>
+                                            <action selector="doTurn:" destination="2" id="MMe-of-UwN"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="9" style="plain" systemItem="fixedSpace" id="qLe-eN-86w"/>
+                                    <barButtonItem image="chg_gray.png" style="plain" id="dFK-UU-bZ6">
+                                        <connections>
+                                            <action selector="doGray:" destination="2" id="pA0-Eh-aWr"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                    </view>
+                    <connections>
+                        <outlet property="btnDeskel" destination="Uli-wv-Rg6" id="BKg-fs-gFX"/>
+                        <outlet property="btnFrame" destination="3aN-bS-ynb" id="baS-rK-SGe"/>
+                        <outlet property="btnGray" destination="dFK-UU-bZ6" id="Fkn-Wd-BEo"/>
+                        <outlet property="btnTurn" destination="6aM-P6-T4S" id="tuT-92-bZx"/>
+                        <outlet property="deskelView" destination="efL-uE-N1x" id="zuA-P5-5jg"/>
+                        <outlet property="imgWall" destination="dCw-We-48E" id="CgA-eq-4vj"/>
+                        <outlet property="lblDescale" destination="Qmv-i0-8Ue" id="yMS-mj-4FN"/>
+                        <outlet property="toolBar" destination="eJD-Sc-M2u" id="5zw-32-jJf"/>
+                        <outlet property="viewMotif" destination="Xfg-SR-W0T" id="nMN-qk-k4b"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="yiC-IS-iS0">
+                    <connections>
+                        <action selector="doPan:" destination="2" id="WRc-8N-LID"/>
+                        <outlet property="delegate" destination="Xfg-SR-W0T" id="XBl-Qp-b07"/>
+                    </connections>
+                </panGestureRecognizer>
+                <pinchGestureRecognizer id="brt-jE-ney">
+                    <connections>
+                        <action selector="doPinch:" destination="2" id="hvo-aX-MPx"/>
+                        <outlet property="delegate" destination="Xfg-SR-W0T" id="lte-Ef-HNr"/>
+                    </connections>
+                </pinchGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-1355" y="29"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="chg_gray.png" width="25" height="20"/>
+        <image name="color.png" width="26" height="24"/>
+        <image name="turn_v2.png" width="40" height="27"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

@@ -14,6 +14,7 @@
 		EDFD82BE1C6C63B50006B9C2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDFD82BC1C6C63B50006B9C2 /* LaunchScreen.storyboard */; };
 		EDFD82C91C6C63B50006B9C2 /* t_BlackAndWhiteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFD82C81C6C63B50006B9C2 /* t_BlackAndWhiteTests.swift */; };
 		EDFD82D41C6C63B50006B9C2 /* t_BlackAndWhiteUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFD82D31C6C63B50006B9C2 /* t_BlackAndWhiteUITests.swift */; };
+		EDFD82E21C6C65500006B9C2 /* images.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = EDFD82E11C6C65500006B9C2 /* images.jpeg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		EDFD82CF1C6C63B50006B9C2 /* t_BlackAndWhiteUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = t_BlackAndWhiteUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDFD82D31C6C63B50006B9C2 /* t_BlackAndWhiteUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = t_BlackAndWhiteUITests.swift; sourceTree = "<group>"; };
 		EDFD82D51C6C63B50006B9C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EDFD82E11C6C65500006B9C2 /* images.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = images.jpeg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 				EDFD82C71C6C63B50006B9C2 /* t_BlackAndWhiteTests */,
 				EDFD82D21C6C63B50006B9C2 /* t_BlackAndWhiteUITests */,
 				EDFD82B11C6C63B50006B9C2 /* Products */,
+				EDFD82E11C6C65500006B9C2 /* images.jpeg */,
 			);
 			sourceTree = "<group>";
 		};
@@ -230,6 +233,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EDFD82BE1C6C63B50006B9C2 /* LaunchScreen.storyboard in Resources */,
+				EDFD82E21C6C65500006B9C2 /* images.jpeg in Resources */,
 				EDFD82BB1C6C63B50006B9C2 /* Assets.xcassets in Resources */,
 				EDFD82B91C6C63B50006B9C2 /* Main.storyboard in Resources */,
 			);

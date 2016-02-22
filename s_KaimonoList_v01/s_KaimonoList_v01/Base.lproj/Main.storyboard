@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -488,26 +488,37 @@
                                             <action selector="doViewTable:" destination="w7d-P4-c9d" id="rnY-PW-JKO"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="tfC-bn-5jh"/>
                                     <barButtonItem title="color" id="Ucw-sT-q3g">
                                         <connections>
                                             <action selector="doChangeColor:" destination="w7d-P4-c9d" id="fHK-Iw-qsJ"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="ol3-SA-gP9"/>
                                     <barButtonItem title="save" id="X1X-EZ-my3">
                                         <connections>
                                             <action selector="doSave:" destination="w7d-P4-c9d" id="ytu-8i-tye"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="gJv-xY-yHK"/>
                                     <barButtonItem systemItem="camera" id="cQY-GS-IHN">
                                         <connections>
                                             <action selector="doCamera:" destination="w7d-P4-c9d" id="dbr-BM-RbI"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="a4D-ak-HNn"/>
+                                    <barButtonItem title="Lib" id="g4H-eW-N7L">
+                                        <connections>
+                                            <action selector="doLib:" destination="w7d-P4-c9d" id="pQH-WT-D5L"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="59D-xJ-Be2"/>
                                     <barButtonItem title="回" id="i1b-pI-LCA">
                                         <connections>
                                             <action selector="doRotate:" destination="w7d-P4-c9d" id="SKa-jb-Fpp"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="xd4-K8-lE9"/>
                                     <barButtonItem title="白黒" id="LSc-rJ-jOS">
                                         <connections>
                                             <action selector="doMonochrome:" destination="w7d-P4-c9d" id="JKz-bf-SkK"/>
@@ -534,7 +545,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0YD-Ms-TZx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="47" y="1367"/>
+            <point key="canvasLocation" x="-12" y="1348"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">

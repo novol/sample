@@ -1,0 +1,484 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="744.09448819"
+   height="1052.3622047"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.5 r10040"
+   sodipodi:docname="desykeru_v2.svg"
+   inkscape:export-filename="/Users/novol/Documents/xcode/desukeling/image/icon_ios8x40.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"
+   enable-background="new">
+  <defs
+     id="defs4">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient4264">
+      <stop
+         style="stop-color:#aaeeff;stop-opacity:1;"
+         offset="0"
+         id="stop4266" />
+      <stop
+         style="stop-color:#00ccff;stop-opacity:1"
+         offset="1"
+         id="stop4268" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient3812">
+      <stop
+         style="stop-color:#80e5ff;stop-opacity:1;"
+         offset="0"
+         id="stop3814" />
+      <stop
+         style="stop-color:#59ffff;stop-opacity:0;"
+         offset="1"
+         id="stop3816" />
+    </linearGradient>
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="0 : 526.18109 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_z="744.09448 : 526.18109 : 1"
+       inkscape:persp3d-origin="372.04724 : 350.78739 : 1"
+       id="perspective2989" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3812-1"
+       id="linearGradient3818-8"
+       x1="492.198"
+       y1="373.69031"
+       x2="305.25775"
+       y2="652.67218"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       id="linearGradient3812-1">
+      <stop
+         style="stop-color:#80e5ff;stop-opacity:1;"
+         offset="0"
+         id="stop3814-0" />
+      <stop
+         style="stop-color:#59ffff;stop-opacity:0;"
+         offset="1"
+         id="stop3816-7" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4264"
+       id="linearGradient4270"
+       x1="679.5177"
+       y1="345.2067"
+       x2="621.85034"
+       y2="483.39566"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(-3.1525302e-6,-7.2387638e-8)" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="3.019403"
+     inkscape:cx="514.6913"
+     inkscape:cy="662.04152"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="true"
+     inkscape:object-paths="true"
+     inkscape:window-width="2054"
+     inkscape:window-height="1199"
+     inkscape:window-x="231"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     showguides="true"
+     inkscape:snap-global="false"
+     inkscape:guide-bbox="true">
+    <inkscape:grid
+       type="xygrid"
+       id="grid3944" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:#0066ff;fill-opacity:1;stroke:none"
+       id="rect4130-2"
+       width="120"
+       height="120"
+       x="600"
+       y="332.36218"
+       inkscape:export-filename="/Users/novol/Documents/xcode/desukeling/image/icon_ios8x120.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="fill:url(#linearGradient4270);fill-opacity:1;stroke:none"
+       id="rect4130"
+       width="120"
+       height="120"
+       x="600"
+       y="332.36218"
+       inkscape:export-filename="/Users/novol/Documents/xcode/desukeling/image/icon_ios8x120.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <g
+       id="g4006"
+       transform="matrix(0.45762027,0,0,0.76583099,56.420534,-110.2047)"
+       style="fill:#001479;fill-opacity:1"
+       inkscape:export-filename="/Users/novol/Documents/xcode/desukeling/image/icon_ios8x40_black.png"
+       inkscape:export-xdpi="17.999998"
+       inkscape:export-ydpi="17.999998">
+      <path
+         inkscape:connector-curvature="0"
+         id="path3867"
+         d="m 658.51295,654.98029 0,204.1489"
+         style="fill:#001479;fill-opacity:1;stroke:#000000;stroke-width:1.68919933px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path3867-4"
+         d="m 598.87268,654.98029 0,204.1489"
+         style="fill:#001479;fill-opacity:1;stroke:#000000;stroke-width:1.68919933px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path3867-0"
+         d="m 760.1364,751.85946 -204.1489,0"
+         style="fill:#001479;fill-opacity:1;stroke:#000000;stroke-width:1.68919933px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path3867-0-6"
+         d="m 766.49167,698.22506 -204.1489,0"
+         style="fill:#001479;fill-opacity:1;stroke:#000000;stroke-width:1.68919933px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path3867-0-1"
+         d="m 766.49167,805.96232 -204.1489,0"
+         style="fill:#001479;fill-opacity:1;stroke:#000000;stroke-width:1.68919933px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path3867-7"
+         d="m 714.60993,654.98029 0,204.1489"
+         style="fill:#001479;fill-opacity:1;stroke:#000000;stroke-width:1.68919933px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         id="rect3983-6"
+         d="m 548.06225,640.50528 0,239.96875 217.84375,0 0,-239.96875 -217.84375,0 z m 32.71875,36.4375 151.125,0 0,166.46875 -151.125,0 0,-166.46875 z"
+         style="fill:#001479;fill-opacity:1;stroke:none" />
+    </g>
+    <path
+       style="fill:#41ffab;fill-opacity:1;stroke:none"
+       d="m 668.24258,481.56633 -13.26186,24.48946 26.48542,0.0459 z"
+       id="path3946"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccc" />
+    <g
+       id="g4272"
+       transform="translate(-8.8234164,69.214751)">
+      <path
+         id="rect3984"
+         d="m 524.96011,272.50528 0,70 50,0 0,-70 -50,0 z m 5,10 40,0 0,50 -40,0 0,-50 z"
+         style="fill:#003380;fill-opacity:1;stroke:none"
+         inkscape:connector-curvature="0" />
+      <rect
+         y="275.50043"
+         x="549.57898"
+         height="62"
+         width="0.69999999"
+         id="rect4149"
+         style="fill:#003380;fill-opacity:1;stroke:none" />
+      <rect
+         y="274.13162"
+         x="559.88104"
+         height="62"
+         width="0.5"
+         id="rect4149-3"
+         style="fill:#003380;fill-opacity:1;stroke:none" />
+      <rect
+         y="274.9455"
+         x="539.7981"
+         height="62"
+         width="0.5"
+         id="rect4149-5"
+         style="fill:#003380;fill-opacity:1;stroke:none" />
+      <rect
+         transform="matrix(0,-1,1,0,0,0)"
+         y="528.25964"
+         x="-307.7435"
+         height="43.027653"
+         width="0.69999999"
+         id="rect4149-1"
+         style="fill:#003380;fill-opacity:1;stroke:none" />
+      <rect
+         transform="matrix(0,-1,1,0,0,0)"
+         y="527.83484"
+         x="-320.50043"
+         height="43.027653"
+         width="0.5"
+         id="rect4149-1-6"
+         style="fill:#003380;fill-opacity:1;stroke:none" />
+      <rect
+         transform="matrix(0,-1,1,0,0,0)"
+         y="527.83478"
+         x="-295.40042"
+         height="42"
+         width="0.5"
+         id="rect4149-1-6-1"
+         style="fill:#003380;fill-opacity:1;stroke:none" />
+    </g>
+    <path
+       inkscape:connector-curvature="0"
+       style="fill:#003380;fill-opacity:1;stroke:none"
+       d="m 434.43453,345.6307 0,70 50,0 0,-70 -50,0 z m 5,10 40,0 0,50 -40,0 0,-50 z"
+       id="rect3984-8" />
+    <rect
+       style="fill:#002255;fill-opacity:1;stroke:none"
+       id="rect4149-7"
+       width="0.69999999"
+       height="62"
+       x="465.59055"
+       y="426.22427" />
+    <rect
+       style="fill:#002255;fill-opacity:1;stroke:none"
+       id="rect4149-3-4"
+       width="0.5"
+       height="62"
+       x="474.67044"
+       y="424.32397" />
+    <rect
+       style="fill:#002255;fill-opacity:1;stroke:none"
+       id="rect4149-5-9"
+       width="0.5"
+       height="62"
+       x="456.18198"
+       y="426.99808" />
+    <rect
+       style="fill:#002255;fill-opacity:1;stroke:none"
+       id="rect4149-1-4"
+       width="0.69999999"
+       height="43.027653"
+       x="-456.15314"
+       y="446.23758"
+       transform="matrix(0,-1,1,0,0,0)" />
+    <rect
+       style="fill:#002255;fill-opacity:1;stroke:none"
+       id="rect4149-1-6-4"
+       width="0.5"
+       height="43.027653"
+       x="-469.62979"
+       y="444.21872"
+       transform="matrix(0,-1,1,0,0,0)" />
+    <rect
+       style="fill:#002255;fill-opacity:1;stroke:none"
+       id="rect4149-1-6-1-5"
+       width="0.5"
+       height="42"
+       x="-441.87231"
+       y="444.48441"
+       transform="matrix(0,-1,1,0,0,0)" />
+    <path
+       style="fill:#002255;fill-opacity:1;stroke:none"
+       d="m 440.69882,421.43996 0,70 50,0 0,-70 -50,0 z m 7.5,7.5 35,0 0,55 -35,0 0,-55 z"
+       id="rect4348"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:#ffffff;fill-opacity:1;stroke:none"
+       d="m 660.13739,340.86405 c 0,0 -0.0892,-0.21878 -44.75828,75.0106 -0.97616,2.34746 -1.44921,4.23239 -1.39218,5.70222 -0.003,0.0188 0.003,0.0401 0,0.0587 -0.0392,0.31099 0,0.62565 0,0.94056 0,10.0774 20.65045,18.22359 46.15046,18.22359 25.50003,0 46.15047,-8.14619 46.15047,-18.22359 -0.33358,-2.71194 -1.60603,-4.83465 -2.36666,-7.17185 -43.51442,-75.03881 -43.78381,-74.54021 -43.78381,-74.54021 z"
+       id="path4591"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccssccc"
+       inkscape:export-filename="/Users/novol/Documents/xcode/desukeling/image/icon_ios8x120.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="fill:#e9afaf;fill-opacity:1;stroke:none"
+       d="m 556.4326,494.69662 c 0,0 -0.0459,0.009 -36.1152,64.15922 -6.8018,12.09763 23.51139,20.1945 35.70242,20.2221 6.15193,0.0139 29.19352,-1.07298 34.25433,-7.50435 3.61142,-4.58947 3.42347,-9.69201 2.16938,-12.62748 C 556.3106,494.63 556.4326,494.69662 556.4326,494.69662 z"
+       id="path3946-3-3"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cssscc"
+       inkscape:export-filename="/Users/novol/Documents/xcode/desukeling/image/icon_ios8x180.png"
+       inkscape:export-xdpi="135"
+       inkscape:export-ydpi="135" />
+    <path
+       style="fill:#1c2422;fill-opacity:1;stroke:none"
+       d="M 460.34375 630.625 C 460.21266 631.19445 460 631.75673 460 632.34375 C 460 640.63618 473.4464 647.375 490.03125 647.375 C 506.6161 647.375 520.0625 640.63618 520.0625 632.34375 C 520.0625 629.77972 518.6724 627.39275 516.40625 625.28125 L 519.6875 630.875 L 460.34375 630.625 z "
+       id="path4589" />
+    <path
+       style="fill:#00112b;fill-opacity:1;stroke:none"
+       d="M 462.90625 626 C 461.70068 627.28669 460.90283 628.67062 460.46875 630.125 L 462.90625 626 z "
+       id="path4587" />
+    <path
+       inkscape:connector-curvature="0"
+       style="fill:#5fd3bc;fill-opacity:1;stroke:none"
+       d="m 610.66864,645.8958 c -0.69995,7.98199 -13.86376,14.34577 -30.00025,14.34577 -16.30566,0 -29.57598,-6.49791 -30.01814,-14.59734"
+       id="path4538-1" />
+    <path
+       style="fill:#1c2422;fill-opacity:1;stroke:none"
+       d="m 460.1427,630.75982 30.02837,-50.22638 29.76495,50.49213 z"
+       id="path4490-5"
+       inkscape:connector-curvature="0" />
+    <g
+       id="g4597"
+       style="fill:#00112b;fill-opacity:1"
+       transform="translate(4.6366782,-1.3247652)">
+      <path
+         transform="matrix(1.0977444,0,0,1,-42.483719,0)"
+         d="m 475.42322,542.92322 c 0,3.66921 -7.91213,6.6437 -17.67224,6.6437 -9.76011,0 -17.67225,-2.97449 -17.67225,-6.6437 0,-3.66922 7.91214,-6.6437 17.67225,-6.6437 9.76011,0 17.67224,2.97448 17.67224,6.6437 z"
+         sodipodi:ry="6.6437006"
+         sodipodi:rx="17.672243"
+         sodipodi:cy="542.92322"
+         sodipodi:cx="457.75098"
+         id="path4593"
+         style="fill:#00112b;fill-opacity:1;stroke:#000000;stroke-width:0.95444167;stroke-opacity:1"
+         sodipodi:type="arc" />
+      <path
+         sodipodi:nodetypes="cccc"
+         inkscape:connector-curvature="0"
+         id="path4595"
+         d="m 460.1418,502.79527 -19.53157,39.59645 38.79921,0.26575 z"
+         style="fill:#00112b;fill-opacity:1;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    </g>
+    <g
+       id="g4659"
+       style="fill:#020771;fill-opacity:0.96086899"
+       inkscape:export-filename="/Users/novol/Documents/xcode/desukeling/image/icon_ios8x120.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"
+       transform="matrix(0.93325756,0,0,0.80542512,44.389027,79.148716)">
+      <rect
+         inkscape:export-ydpi="135"
+         inkscape:export-xdpi="135"
+         inkscape:export-filename="/Users/novol/Documents/xcode/desukeling/image/icon_ios8x180.png"
+         y="360.11566"
+         x="659.74902"
+         height="67.04921"
+         width="0.40000001"
+         id="rect4149-7-3"
+         style="fill:#020771;fill-opacity:0.96086899;stroke:none" />
+      <rect
+         inkscape:export-ydpi="135"
+         inkscape:export-xdpi="135"
+         inkscape:export-filename="/Users/novol/Documents/xcode/desukeling/image/icon_ios8x180.png"
+         transform="matrix(0,-1,1,0,0,0)"
+         y="636.47827"
+         x="-392.302"
+         height="45.685135"
+         width="0.40000001"
+         id="rect4149-1-4-3"
+         style="fill:#020771;fill-opacity:0.96086899;stroke:none" />
+      <rect
+         inkscape:export-ydpi="135"
+         inkscape:export-xdpi="135"
+         inkscape:export-filename="/Users/novol/Documents/xcode/desukeling/image/icon_ios8x180.png"
+         transform="matrix(0,-1,1,0,0,0)"
+         y="637.00977"
+         x="-377.21518"
+         height="45.685135"
+         width="0.2"
+         id="rect4149-1-4-3-6"
+         style="fill:#020771;fill-opacity:0.96086899;stroke:none" />
+      <rect
+         inkscape:export-ydpi="135"
+         inkscape:export-xdpi="135"
+         inkscape:export-filename="/Users/novol/Documents/xcode/desukeling/image/icon_ios8x180.png"
+         transform="matrix(0,-1,1,0,0,0)"
+         y="637.54126"
+         x="-407.17599"
+         height="45.685135"
+         width="0.2"
+         id="rect4149-1-4-3-7"
+         style="fill:#020771;fill-opacity:0.96086899;stroke:none" />
+      <rect
+         inkscape:export-ydpi="135"
+         inkscape:export-xdpi="135"
+         inkscape:export-filename="/Users/novol/Documents/xcode/desukeling/image/icon_ios8x180.png"
+         y="359.71704"
+         x="669.70074"
+         height="67.04921"
+         width="0.2"
+         id="rect4149-7-3-0"
+         style="fill:#020771;fill-opacity:0.96086899;stroke:none" />
+      <rect
+         inkscape:export-ydpi="135"
+         inkscape:export-xdpi="135"
+         inkscape:export-filename="/Users/novol/Documents/xcode/desukeling/image/icon_ios8x180.png"
+         y="358.12256"
+         x="650.0354"
+         height="67.04921"
+         width="0.2"
+         id="rect4149-7-3-9"
+         style="fill:#020771;fill-opacity:0.96086899;stroke:none" />
+      <path
+         inkscape:export-ydpi="135"
+         inkscape:export-xdpi="135"
+         inkscape:export-filename="/Users/novol/Documents/xcode/desukeling/image/icon_ios8x180.png"
+         inkscape:connector-curvature="0"
+         id="rect4369"
+         d="m 630.34375,352.30956 0,80 59.54675,0 0,-80 -59.54675,0 z m 9.80001,11.6875 39.69783,0 0,58.46875 -39.69783,0 0,-58.46875 z"
+         style="fill:#020771;fill-opacity:0.96086899;stroke:none" />
+    </g>
+    <path
+       sodipodi:type="arc"
+       style="fill:#deaa87;fill-opacity:1;stroke:none"
+       id="path3086"
+       sodipodi:cx="683.74445"
+       sodipodi:cy="627.52655"
+       sodipodi:rx="23.680178"
+       sodipodi:ry="11.674493"
+       d="m 707.42462,627.52655 a 23.680178,11.674493 0 1 1 -47.36035,0 23.680178,11.674493 0 1 1 47.36035,0 z"
+       transform="matrix(1.7314059,0,0,1.9272786,-527.81697,-604.4747)" />
+    <path
+       style="fill:#e24800;fill-opacity:1;stroke:none"
+       d="m 615.053,602.60418 39.91887,-55.30895 42.08113,55.14335 z"
+       id="path3882"
+       inkscape:connector-curvature="0" />
+    <path
+       sodipodi:type="arc"
+       style="fill:#e9afaf;fill-opacity:1;stroke:none"
+       id="path3886"
+       sodipodi:cx="630.33984"
+       sodipodi:cy="500.2663"
+       sodipodi:rx="12.502472"
+       sodipodi:ry="5.9614434"
+       d="m 642.84232,500.2663 a 12.502472,5.9614434 0 1 1 -25.00495,0 12.502472,5.9614434 0 1 1 25.00495,0 z"
+       transform="matrix(0.99980229,0,0,1.0064677,12.284781,8.8143738)" />
+    <path
+       style="fill:#41ffab;fill-opacity:1;stroke:none"
+       d="m 708.93412,521.30311 -13.26186,24.48946 26.48542,0.0459 z"
+       id="path3946-6"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccc" />
+    <path
+       sodipodi:type="arc"
+       style="fill:#e9afaf;fill-opacity:1;stroke:none"
+       id="path3886-7"
+       sodipodi:cx="630.33984"
+       sodipodi:cy="500.2663"
+       sodipodi:rx="12.502472"
+       sodipodi:ry="5.9614434"
+       d="m 642.84232,500.2663 a 12.502472,5.9614434 0 1 1 -25.00495,0 12.502472,5.9614434 0 1 1 25.00495,0 z"
+       transform="translate(78.625805,53.150025)" />
+  </g>
+</svg>
