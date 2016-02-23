@@ -18,6 +18,22 @@ class DescaleViewController:
     UINavigationControllerDelegate,
     UIGestureRecognizerDelegate
 {
+    /*---
+    ■ 残課題
+     1.画面サイズのマルチ化
+     2.universe対応
+     3.tableViewの表示位置
+     4.tableViewのcloseタイミング
+     5.読み込んだ画像の画面フィット
+     6.pinchのMax/Min
+     7.panのMax/Min
+     8.木炭紙サイズ追加
+     9.universe対応
+    10.save画像のフッター設定（descaleSizeのみ表示させる？->画像の合成が必要）
+    11.印刷テスト
+    12.メール送信テスト
+    ---*/
+    
 
     // MARK: - 変数
     // private variables
@@ -39,18 +55,18 @@ class DescaleViewController:
     // ImageView.
     var myImageView: UIImageView!
     
-    // モノクロ画像の退避変数.
+    // オリジナル画像・モノクロ画像の退避変数.
     var grayImage:UIImage?
     var orgImage:UIImage?
     
     // Tableで使用する配列を設定する
     var myTableView: UITableView!
     
+    
     var descaleHight:Double = 0.0
     var descaleWidth:Double = 0.0
     var descaleColor:Bool = true
     var angle:CGFloat = 0.0
-    
     var monoFlg:Bool = true
     var currentTransForm:CGAffineTransform!
     
@@ -220,10 +236,6 @@ class DescaleViewController:
             image = UIGraphicsGetImageFromCurrentImageContext();
             UIGraphicsEndImageContext();
             // おまじない終わり
-
-            
-            
-            
             
             var perHeight:CGFloat = 1.0
             var perWidth:CGFloat = 1.0
