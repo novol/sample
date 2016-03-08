@@ -488,7 +488,7 @@
                                             <action selector="doViewTable:" destination="w7d-P4-c9d" id="rnY-PW-JKO"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="tfC-bn-5jh"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="L4a-Dq-X1v"/>
                                     <barButtonItem title="color" id="Ucw-sT-q3g">
                                         <connections>
                                             <action selector="doChangeColor:" destination="w7d-P4-c9d" id="fHK-Iw-qsJ"/>

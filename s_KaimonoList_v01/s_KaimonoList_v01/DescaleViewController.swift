@@ -62,7 +62,7 @@ class DescaleViewController:
     // Tableで使用する配列を設定する
     var myTableView: UITableView!
     
-    
+    // 変数
     var descaleHight:Double = 0.0
     var descaleWidth:Double = 0.0
     var descaleColor:Bool = true
@@ -160,6 +160,8 @@ class DescaleViewController:
     
     @IBAction func doSave(sender: UIBarButtonItem) {
         
+        // iPadでは使えない？
+        
         if myTableView.hidden == false {
             myTableView.hidden = true
         }
@@ -184,6 +186,9 @@ class DescaleViewController:
         
         // 初期化処理
         let activityVC = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
+        
+        // iPad用のおまじない（これがないと強制終了する）
+        activityVC.popoverPresentationController?.sourceView = self.view
         
         // 使用しないアクティビティタイプ
         let excludedActivityTypes = [
@@ -221,9 +226,6 @@ class DescaleViewController:
     // 写真を選択した時に呼ばれる
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         if info[UIImagePickerControllerOriginalImage] != nil {
-            
-            print("通ってる")
-            
             
             // 回転用のアフィン行列を生成する.(0度)
             self.myImageView.transform = CGAffineTransformMakeRotation(0)
@@ -288,17 +290,10 @@ class DescaleViewController:
 
             // オリジナル画像を退避
             orgImage = image
-            
 
-            
             // 画像のデータを取得する
 //            let image:UIImage = info[UIImagePickerControllerOriginalImage] as UIImage;
-            
-            
             picker.dismissViewControllerAnimated(true, completion: nil)
-            
-            
-            
             
             // モノクロ化
             grayImage = getGrayImage(grayImage!)
@@ -322,15 +317,20 @@ class DescaleViewController:
             
             currentTransForm = self.myImageView.transform
         }
+    
         picker.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    
+    // MRK:- StatusBar非表示
+    override func prefersStatusBarHidden() -> Bool {
+        return true
     }
     
     // MARK: - override func
     override func viewDidLoad() {
         
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
 
         // UserDefaultの設定
 //        var myDefault = NSUserDefaults.standardUserDefaults()
@@ -352,8 +352,10 @@ class DescaleViewController:
 //            print("型:\(type) 号数:\(gosu) サイズ:\(s) 高さ:\(h) 幅:\(w)")
         }
         
-        // baseViewの生成
+        // size調整
         baseView = UIView(frame: CGRectMake(0, 0, self.view.bounds.width, self.view.bounds.height - 44 - 44))
+
+        
         baseView.backgroundColor = UIColor.grayColor()
         baseView.userInteractionEnabled = true
 
@@ -543,7 +545,8 @@ class DescaleViewController:
         
         let translation = gesture.translationInView(self.view)
         var center =  self.myImageView.center
-        let  frameView = self.view.frame;
+
+//        let  frameView = self.view.frame;
         
 //        //centerがviewの内側であること
 //        if (translation.x + center.x < 0) {
