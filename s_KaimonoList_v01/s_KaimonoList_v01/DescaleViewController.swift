@@ -28,10 +28,10 @@ class DescaleViewController:
      6.pinchのMax/Min
      7.panのMax/Min
      8.木炭紙サイズ追加
-     9.universe対応
-    10.save画像のフッター設定（descaleSizeのみ表示させる？->画像の合成が必要）
-    11.印刷テスト
-    12.メール送信テスト
+     9.save画像のフッター設定（descaleSizeのみ表示させる？->画像の合成が必要）
+    10.印刷テスト
+    11.メール送信テスト
+    12.アイコン作成
     ---*/
     
 
@@ -71,6 +71,10 @@ class DescaleViewController:
     var currentTransForm:CGAffineTransform!
     
     
+    var h:CGFloat = 0
+    var w:CGFloat = 0
+    var c:CGPoint = CGPointMake(0, 0)
+
 //-- test用
 //    // Imageの表示View
 //    var imgView:DescaleImageView!
@@ -353,9 +357,13 @@ class DescaleViewController:
         }
         
         // size調整
-        baseView = UIView(frame: CGRectMake(0, 0, self.view.bounds.width, self.view.bounds.height - 44 - 44))
-
+        h = ( self.view.bounds.height - self.toolbarDescale.frame.height - 44 ) * 0.95
+        w = ( self.view.bounds.width ) * 0.95
+        c = self.view.center
         
+        c.y = c.y - ( self.toolbarDescale.frame.height - 44 ) / 2
+        baseView = UIView(frame: CGRectMake(0, 0, w, h))
+        baseView.center = c
         baseView.backgroundColor = UIColor.grayColor()
         baseView.userInteractionEnabled = true
 

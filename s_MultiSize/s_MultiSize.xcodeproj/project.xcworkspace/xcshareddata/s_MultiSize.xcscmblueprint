@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "F8774171AC6798E2C7BD690DA72EEA136E42C598",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "F8774171AC6798E2C7BD690DA72EEA136E42C598" : 0,
+    "1304406E79468DFFC2C5CFFD94AFAEE1E912D53D" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "47E0838E-EA78-4C89-8CCD-825239710372",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "F8774171AC6798E2C7BD690DA72EEA136E42C598" : "sample\/",
+    "1304406E79468DFFC2C5CFFD94AFAEE1E912D53D" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "s_MultiSize",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "s_MultiSize\/s_MultiSize.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/novol\/descale.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "1304406E79468DFFC2C5CFFD94AFAEE1E912D53D"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/novol\/sample.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "F8774171AC6798E2C7BD690DA72EEA136E42C598"
+    }
+  ]
+}
