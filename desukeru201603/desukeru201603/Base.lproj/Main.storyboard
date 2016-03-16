@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="desukeru201603" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KAo-XP-ZEF">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem title="デスケル" style="done" id="40j-DB-U50">
+                                        <connections>
+                                            <action selector="doViewTable:" destination="BYZ-38-t0r" id="pUg-S8-yXr"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem image="color.png" id="DzB-er-GgU">
+                                        <connections>
+                                            <action selector="doChangeColor:" destination="BYZ-38-t0r" id="3aQ-ow-YU0"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem systemItem="camera" id="Dt2-D7-NOq">
+                                        <connections>
+                                            <action selector="doCamera:" destination="BYZ-38-t0r" id="AEv-o3-Wdq"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Lib" id="cxj-3o-6tz">
+                                        <connections>
+                                            <action selector="doLib:" destination="BYZ-38-t0r" id="6pf-LX-o7T"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem image="turn_v2.png" id="Wqn-fG-068">
+                                        <connections>
+                                            <action selector="doRotate:" destination="BYZ-38-t0r" id="8D6-8Y-4OC"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem image="chg_gray.png" id="eXm-Cu-ghq">
+                                        <connections>
+                                            <action selector="doMonochrome:" destination="BYZ-38-t0r" id="fMC-oF-tZd"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem systemItem="action" id="hi9-IV-bgA">
+                                        <connections>
+                                            <action selector="doAction:" destination="BYZ-38-t0r" id="1L9-bU-hTG"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="KAo-XP-ZEF" secondAttribute="trailing" constant="-20" id="FWp-It-ISd"/>
+                            <constraint firstItem="KAo-XP-ZEF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="uPO-uW-tMr"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="KAo-XP-ZEF" secondAttribute="bottom" id="uSI-ZC-JDH"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="desukeruActionBtn" destination="hi9-IV-bgA" id="dZd-bN-0Z0"/>
+                        <outlet property="desukeruCameraBtn" destination="Dt2-D7-NOq" id="QE4-5C-uGa"/>
+                        <outlet property="desukeruChangeColorBtn" destination="DzB-er-GgU" id="Yq5-2R-2FA"/>
+                        <outlet property="desukeruLibBtn" destination="cxj-3o-6tz" id="v4D-NR-Nd4"/>
+                        <outlet property="desukeruMonochomeBtn" destination="eXm-Cu-ghq" id="WJ1-Ns-XXJ"/>
+                        <outlet property="desukeruRotetoBtn" destination="Wqn-fG-068" id="Kt7-wl-FAm"/>
+                        <outlet property="desukeruSelectBtn" destination="40j-DB-U50" id="G31-ll-JkB"/>
+                        <outlet property="desukeruToolbar" destination="KAo-XP-ZEF" id="02d-du-vtA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="448" y="357"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="chg_gray.png" width="25" height="20"/>
+        <image name="color.png" width="26" height="24"/>
+        <image name="turn_v2.png" width="40" height="27"/>
+    </resources>
+</document>
